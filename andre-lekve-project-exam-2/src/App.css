@@ -1,0 +1,386 @@
+/* -------------------------------------------------GLOBAL STYLES-------------------------------------------------- */
+.container {
+  margin-top: 1rem;
+}
+h1 {
+  font-size: 2rem;
+  font-family: 'Agency FB', arial;
+}
+h2 {
+  font-size: 1.5rem;
+  font-family: 'Agency FB', arial;
+}
+h3 {
+  font-size: 1.2rem;
+  font-family: 'Agency FB', arial;
+}
+p {
+  color: #1d1d1d;
+}
+a {
+  text-decoration: none;
+  color: #1d1d1d;
+}
+.input-group-text {
+  background-color: #343a40;
+}
+.searchbar-icon {
+  color: #ffffff;
+}
+.button {
+  background-color: #343a40;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: 'Agency FB', arial;
+  padding: 0.4rem 1.3rem;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #4b6fd1;
+}
+.button:active {
+  background-color: #76bb76 !important;
+}
+.validation-error {
+  color: #c02626;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 0.9rem;
+  background-color: #e6643042;
+}
+.error-h2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.error-text {
+  padding-bottom: 1rem;
+}
+.error-imagecontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.error-imagecontainer__image {
+  border-radius: 1%;
+}
+.error-imagecontainer__text {
+  padding-top: 2px;
+  text-align: center;
+  font-size: 11px;
+}
+/* ---------------------------------------------------NAVBAR------------------------------------------------------ */
+.navbar i {
+  font-size: 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+.navbar a {
+  color: #ffffff;
+  padding-right: 1rem;
+  font-family: 'Agency FB', arial;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.navbar a:hover {
+  color: #76bb76;
+  padding-right: 1rem;
+  text-decoration: none;
+}
+.navbar i:hover {
+  color: #76bb76;
+}
+.navbar .user-button:hover {
+  color: #4b6fd1;
+}
+.logout-button {
+  background-color: #343a40;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.navbar .logo-icon:hover {
+  color: #ffffff;
+}
+.navbar .logout-icon:hover {
+  color: #e63030;
+}
+/* ---------------------------------------------------MAIN------------------------------------------------------- */
+main {
+  min-height: 100vh;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-image: url('./images/background-sw.jpg');
+  background-position: center;
+  background-repeat: repeat;
+}
+/* -----------------------------------------------------FOOTER-------------------------------------------------- */
+.footer {
+  background-color: #343a40;
+  width: 100%;
+}
+.footer-logo {
+  padding-top: 2rem;
+}
+.footer-logo__text {
+  color: #ffffff;
+  font-family: 'Agency FB', arial;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.footer-icons__facebook {
+  font-size: 2rem;
+  color: #ffffff;
+}
+.footer-icons__twitter {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+}
+.footer-icons__pinterest {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+}
+.footer-icons__instagram {
+  font-size: 2rem;
+  color: #ffffff;
+}
+.footer i:hover {
+  color: #7c7c7c;
+  list-style-type: none;
+}
+.footer-icons {
+  padding-top: 1rem;
+}
+.footer-copyright__text {
+  padding-top: 1rem;
+  color: white;
+  font-size: 1rem;
+}
+/* -------------------------------------------------HOMEPAGE------------------------------------------------------ */
+.homepage-searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.homepage-empty {
+  font-family: 'Agency FB', arial;
+  text-transform: uppercase;
+}
+.homepage-empty__warning {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  width: 310px;
+  font-weight: bold;
+  color: #e63030;
+}
+.homepage-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.homepage-container__posts {
+  display: flex;
+  flex-direction: column;
+  width: 333px;
+  height: 310px;
+  margin: 20px 0px 20px 0px;
+  padding: 1rem;
+  padding-top: 2rem;
+  border: solid 1px #343a40;
+  border-radius: 2%;
+}
+.homepage-container__posts-title {
+  font-weight: bold;
+}
+.homepage-container__posts-info {
+  font-family: 'Agency FB', arial;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.loading-container {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-family: 'Agency FB', arial;
+  font-weight: bold;
+  color: #4b6fd1;
+}
+.homepage-container__posts-title {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-family: 'Agency FB', arial;
+}
+/* -------------------------------------------------ABOUTPAGE------------------------------------------------------ */
+.about-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* -------------------------------------------------CONTACTPAGE------------------------------------------------------ */
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/* -------------------------------------------------LOGINPAGE------------------------------------------------------ */
+.login-form__login {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-family: 'Agency FB', arial;
+  font-weight: bold;
+  color: #4b6fd1;
+}
+/* -------------------------------------------USER-/POSTSPAGE--------------------------------------------- */
+.user-post__heading {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+.user-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.user-card__card {
+  display: flex;
+  flex-direction: column;
+  width: 333px;
+  height: 250px;
+  margin: 20px 0px 20px 0px;
+  padding: 1rem;
+  padding-top: 2rem;
+  border: solid 1px #494949;
+  border-radius: 2%;
+}
+.user-card a {
+  text-decoration: none;
+}
+.user-card__card:hover {
+  background-color: #dadada;
+  color: #000000;
+}
+.user-card__title {
+  font-weight: bold;
+  font-family: 'Agency FB', arial;
+  text-transform: uppercase;
+}
+.userpage-home {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+.userpage-home a {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: 'Agency FB', arial;
+  text-decoration: none;
+}
+.userpage-home a:hover {
+  color: #4b6fd1;
+}
+.userpage-home a:active {
+  color: #2ea82e;
+}
+.spinner {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-family: 'Agency FB', arial;
+  font-weight: bold;
+  color: #4b6fd1;
+}
+.searchbar-user {
+  padding-top: 1rem;
+  max-width: 333px;
+}
+.new-post {
+  text-transform: uppercase;
+  font-family: 'Agency FB', arial;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.new-post a {
+  color: #343a40;
+  text-decoration: none;
+}
+.new-post a:hover {
+  color: #4b6fd1;
+}
+.postlist-empty {
+  font-family: 'Agency FB', arial;
+  text-transform: uppercase;
+}
+.postlist-empty__warning {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  width: 310px;
+  font-weight: bold;
+  color: #e63030;
+}
+/* -------------------------------------------------ADDPOSTPAGE------------------------------------------------------ */
+.add-post__submit {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-family: 'Agency FB', arial;
+  font-weight: bold;
+  color: #4b6fd1;
+}
+.postsmedia-dropdown__searchbar {
+  padding: 1rem 1rem 0rem 1rem;
+}
+.postsmedia-dropdown__empty {
+  font-family: 'Agency FB', arial;
+  text-transform: uppercase;
+  text-align: center;
+}
+.postsmedia-dropdown__empty-warning {
+  font-size: 1.3rem;
+  padding: 1rem;
+  width: 310px;
+  font-weight: bold;
+  color: #e63030;
+}
+/* -------------------------------------------------EDITPOSTPAGE------------------------------------------------------ */
+.update-container {
+  display: flex;
+  align-items: baseline;
+}
+.update-container__success {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: 'Agency FB', arial;
+  padding: 1rem 1rem 1rem 0rem;
+}
+.update-container__success-icon {
+  color: #2ea82e;
+  font-size: 1.7rem;
+  padding-left: 5px;
+}
+.update-button__group {
+  padding-top: 1rem;
+  font-family: 'Agency FB', arial;
+}
+.delete-button {
+  padding: 0.7rem 1.3rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+.update-button__group-button {
+  padding: 0.7rem 1.3rem;
+  background-color: #4b6fd1;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+.update-button__group-button:hover {
+  background-color: #3f5db1;
+}
