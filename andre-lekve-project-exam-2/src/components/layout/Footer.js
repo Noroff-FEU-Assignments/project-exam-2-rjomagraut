@@ -1,16 +1,17 @@
 import Nav from "react-bootstrap/Nav";
+import footerImgLeft from "../../images/footer-left.jpg";
+import footerImgRight from "../../images/footer-right.jpg";
 
 export default function Footer() {
 
 	return (
 		<>
         <footer className="footer">
-        <Nav className="justify-content-center footer-logo">
-            <Nav.Item>
-                <span className="footer-logo__text"><i className="fab fa-jedi-order footer-logo-icon"></i> Wiki-sw</span>
-            </Nav.Item>
-        </Nav>
-        <Nav className="justify-content-center footer-icons">
+            <div className="footer-left">
+                <img src={footerImgLeft} alt="Italian Trulli"></img>
+            </div>
+            <div className="footer-center">
+                <Nav className="justify-content-center footer-icons">
             <Nav.Item>
             <Nav.Link href="#"><i className="fab fa-facebook-square footer-icons__facebook"></i></Nav.Link>
             </Nav.Item>
@@ -23,12 +24,14 @@ export default function Footer() {
             <Nav.Item>
             <Nav.Link href="#"><i className="fab fa-instagram-square footer-icons__instagram"></i></Nav.Link>
             </Nav.Item>
-        </Nav>
-        <Nav className="justify-content-center footer-copyright">
-            <Nav.Item>
-                <p class="footer-copyright__text">&copy; Wiki-SW - André Lekve</p>
+             <Nav.Item>
+                <p className="footer-copyright__text">&copy; Holidaze</p>
             </Nav.Item>
         </Nav>
+            </div>
+         <div className="footer-right">
+                <img src={footerImgRight} alt="Italian Trulli"></img>
+            </div>
         </footer>
         </>
 	);

@@ -3,6 +3,9 @@ import { Link, useHistory } from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Navbar";
+import navImgLeft from "../../images/nav-left.jpg";
+import navImgRight from "../../images/nav-right.jpg";
+import logo from "../../images/logo.jpg";
 import Container from "react-bootstrap/Container";
 export default function NavBar() {
 	const [auth, setAuth] = useContext(AuthContext);
@@ -15,9 +18,15 @@ export default function NavBar() {
 	}
 
 	return (
-		<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+		<>
+		<nav className="navbar">
+		<div className="nav-left">
+                <img src={navImgLeft} alt="Italian Trulli"></img>
+        </div>
+		<div className="nav-center">
+			<Navbar collapseOnSelect expand="lg" bg="white" variant="light">
 		<Container>
-			<Navbar.Brand href="/"><span className="logo"><i className="fab fa-jedi-order logo-icon"></i> Wiki-sw</span></Navbar.Brand>
+			<Navbar.Brand href="/"><div className="logo"><img src={logo} alt="Italian Trulli"></img></div></Navbar.Brand>
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className="mr-auto">
@@ -38,6 +47,11 @@ export default function NavBar() {
 			</Navbar.Collapse>
 		</Container>
 		</Navbar>
-		
+		</div>
+		<div className="nav-right">
+                <img src={navImgRight} alt="Italian Trulli"></img>
+        </div>
+		</nav>
+		</>
 	);
 }

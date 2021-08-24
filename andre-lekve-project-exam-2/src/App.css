@@ -74,13 +74,26 @@ a {
   font-size: 11px;
 }
 /* ---------------------------------------------------NAVBAR------------------------------------------------------ */
+.navbar {
+  background-color: #ffffff;
+  max-height: 100px;
+}
+.nav-left {
+  height: auto;
+  display: flex;
+  align-self: flex-start;
+}
+.nav-right {
+  display: flex;
+  align-self: flex-end;
+}
 .navbar i {
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #000000;
   cursor: pointer;
 }
 .navbar a {
-  color: #ffffff;
+  color: #000000;
   padding-right: 1rem;
   font-family: 'Agency FB', arial;
   font-size: 1.5rem;
@@ -96,6 +109,9 @@ a {
 }
 .navbar .user-button:hover {
   color: #4b6fd1;
+}
+.logo {
+  max-width: 50%;
 }
 .logout-button {
   background-color: #343a40;
@@ -118,14 +134,32 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-image: url('./images/background-sw.jpg');
+  background-image: url('./images/background-main.jpg');
   background-position: center;
   background-repeat: repeat;
 }
 /* -----------------------------------------------------FOOTER-------------------------------------------------- */
 .footer {
-  background-color: #343a40;
+  background-color: #193c40;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 100px;
+}
+.footer-left {
+  height: auto;
+  display: flex;
+  align-self: flex-start;
+}
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.footer-right {
+  display: flex;
+  align-self: flex-end;
 }
 .footer-logo {
   padding-top: 2rem;
