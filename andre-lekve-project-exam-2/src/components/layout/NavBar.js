@@ -20,21 +20,21 @@ export default function NavBar() {
 	return (
 		<>
 		<nav className="navbar">
-		<div className="nav-left">
+		<div className="navbar-left">
                 <img src={navImgLeft} alt="Italian Trulli"></img>
         </div>
-		<div className="nav-center">
+		<div className="navbar-center">
 			<Navbar collapseOnSelect expand="lg" bg="white" variant="light">
 		<Container>
 			<Navbar.Brand href="/"><div className="logo"><img src={logo} alt="Italian Trulli"></img></div></Navbar.Brand>
-			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+			<Navbar.Toggle className="navbar-menu" aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
-				<Nav className="mr-auto">
+				<Nav className="mr-auto navbar-menu__user">
 				<Link to="/">Home</Link>
 				<Link to="/about">About</Link>
 				<Link to="/contact">Contact</Link>
 				</Nav>
-				<Nav>
+				<Nav className="navbar-menu__admin">
 								{auth ? (
 									<>
 										<Link to="/user"><i title="User Menu" className="fas fa-users-cog user-button"></i></Link>
@@ -48,7 +48,7 @@ export default function NavBar() {
 		</Container>
 		</Navbar>
 		</div>
-		<div className="nav-right">
+		<div className="navbar-right">
                 <img src={navImgRight} alt="Italian Trulli"></img>
         </div>
 		</nav>
