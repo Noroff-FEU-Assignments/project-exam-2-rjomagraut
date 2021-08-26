@@ -76,14 +76,17 @@ a {
 /* ---------------------------------------------------NAVBAR------------------------------------------------------ */
 .navbar {
   background-color: #ffffff;
-  padding: 0;
-  display: flex;
 }
 .navbar .container {
   margin: 0;
 }
-.container .logo {
-  display: inline-block;
+.navbar-left {
+  position: absolute;
+}
+.navbar-right {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .navbar i {
   font-size: 1.5rem;
@@ -105,11 +108,11 @@ a {
 .navbar i:hover {
   color: #76bb76;
 }
-.navbar .user-button:hover {
+.navbar .admin-button:hover {
   color: #4b6fd1;
 }
 .logout-button {
-  background-color: #343a40;
+  background-color: #ffffff;
   border: none;
   color: white;
   text-align: center;
@@ -225,8 +228,8 @@ main {
   font-size: 1.4rem;
   font-family: 'Agency FB', arial;
 }
-/* -------------------------------------------------ABOUTPAGE------------------------------------------------------ */
-.about-container {
+/* -------------------------------------------------HOTELSPAGE------------------------------------------------------ */
+.hotels-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

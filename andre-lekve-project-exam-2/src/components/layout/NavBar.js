@@ -19,39 +19,37 @@ export default function NavBar() {
 
 	return (
 		<>
-		<nav className="navbar">
 		<div className="navbar-left">
-                <img src={navImgLeft} alt="Italian Trulli"></img>
+                <img src={navImgLeft} alt="Navbar styling"></img>
         </div>
-		<div className="navbar-center">
-			<Navbar collapseOnSelect expand="lg" bg="white" variant="light">
+		<Navbar collapseOnSelect expand="lg" bg="white" variant="light">
+			
 		<Container>
-			<Navbar.Brand href="/"><div className="logo"><img src={logo} alt="Italian Trulli"></img></div></Navbar.Brand>
+			<Navbar.Brand href="/"><img src={logo} alt="Holidaze logo"/></Navbar.Brand>
 			<Navbar.Toggle className="navbar-menu" aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className="mr-auto navbar-menu__user">
 				<Link to="/">Home</Link>
-				<Link to="/about">About</Link>
+				<Link to="/hotels">Hotels</Link>
 				<Link to="/contact">Contact</Link>
 				</Nav>
 				<Nav className="navbar-menu__admin">
 								{auth ? (
 									<>
-										<Link to="/user"><i title="User Menu" className="fas fa-users-cog user-button"></i></Link>
+										<Link to="/user"><i title="User Menu" className="fas fa-users-cog admin-button"></i></Link>
 										<button title="Logout" className="logout-button" onClick={logout}><i className="fas fa-sign-out-alt logout-icon"></i></button>
 									</>
 								) : (
-									<Link to="/login"><i title="Login" className="fas fa-user login-button"></i></Link>
+									<Link to="/login"><div title="Login" className="login-button">Admin <i className="fas fa-lock"/></div></Link>
 								)}
 					</Nav>
 			</Navbar.Collapse>
 		</Container>
+		
 		</Navbar>
-		</div>
 		<div className="navbar-right">
-                <img src={navImgRight} alt="Italian Trulli"></img>
+                <img src={navImgRight} alt="Navbar styling"></img>
         </div>
-		</nav>
 		</>
 	);
 }
