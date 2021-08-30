@@ -1,20 +1,59 @@
+@font-face {
+  font-family: 'vacations';
+  src: url('../src/fonts/vacations_in_paradise_personal_use-webfont.woff')
+      format('woff'),
+    url('../src/fonts/vacations_in_paradise_personal_use-webfont.woff2')
+      format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ralewayextralight';
+  src: url('../src/fonts/raleway-extralight-webfont.woff2') format('woff2'),
+    url('../src/fonts/raleway-extralight-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ralewaylight';
+  src: url('../src/fonts/raleway-light-webfont.woff2') format('woff2'),
+    url('../src/fonts/raleway-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ralewaymedium';
+  src: url('../src/fonts/raleway-medium-webfont.woff2') format('woff2'),
+    url('../src/fonts/raleway-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ralewayregular';
+  src: url('../src/fonts/raleway-regular-webfont.woff2') format('woff2'),
+    url('../src/fonts/raleway-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 /* -------------------------------------------------GLOBAL STYLES-------------------------------------------------- */
 .container {
   margin-top: 1rem;
 }
 h1 {
   font-size: 2rem;
-  font-family: 'Agency FB', arial;
+  font-family: 'vacations', arial;
+  padding-bottom: 1rem;
 }
 h2 {
   font-size: 1.5rem;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaylight', arial;
 }
 h3 {
   font-size: 1.2rem;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaylight', arial;
 }
 p {
+  font-family: 'ralewaymedium', arial;
   color: #1d1d1d;
 }
 a {
@@ -35,16 +74,16 @@ a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.1rem;
-  font-family: 'Agency FB', arial;
+  font-size: 1rem;
+  font-family: 'ralewaymedium', arial;
   padding: 0.4rem 1.3rem;
   cursor: pointer;
 }
 .button:hover {
-  background-color: #4b6fd1;
+  background-color: #ff8400;
 }
 .button:active {
-  background-color: #76bb76 !important;
+  background-color: #193c40 !important;
 }
 .validation-error {
   color: #c02626;
@@ -81,52 +120,58 @@ a {
   margin: 0;
 }
 .navbar-left {
-  position: absolute;
+  position: relative;
 }
 .navbar-right {
-  position: absolute;
+  position: relative;
   right: 0;
   top: 0;
 }
-.navbar i {
-  font-size: 1.5rem;
-  color: #000000;
-  cursor: pointer;
-}
+
 .navbar a {
   color: #000000;
   padding-right: 1rem;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaylight', arial;
+  letter-spacing: -2px;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
 .navbar a:hover {
-  color: #76bb76;
+  color: #ff8400;
   padding-right: 1rem;
   text-decoration: none;
 }
-.navbar i:hover {
-  color: #76bb76;
+.navbar button:hover {
+  color: #ff8400;
 }
-.navbar .admin-button:hover {
-  color: #4b6fd1;
+.navbar a:active {
+  color: #193c40;
+  padding-right: 1rem;
+  text-decoration: none;
 }
-.logout-button {
+.navbar button:active {
+  color: #193c40;
+}
+
+.logout-button,
+.admin-button,
+.login-button {
   background-color: #ffffff;
+  font-family: 'ralewaymedium', arial;
+  text-transform: uppercase;
   border: none;
-  color: white;
+  font-size: 1.1rem;
+  color: #000000;
   text-align: center;
   text-decoration: none;
   display: inline-block;
 }
-.navbar .logo-icon:hover {
-  color: #ffffff;
-}
 .navbar .logout-icon:hover {
-  color: #e63030;
+  color: #ff8400;
 }
 /* ---------------------------------------------------MAIN------------------------------------------------------- */
 main {
+  border-top: solid #ff8400 2px;
   min-height: 100vh;
   padding: 1rem 2rem;
   display: flex;
@@ -162,7 +207,7 @@ main {
   color: #ffffff;
 }
 .footer i:hover {
-  color: #7c7c7c;
+  color: #ff8400;
   list-style-type: none;
 }
 .footer-icons {
@@ -181,7 +226,7 @@ main {
   justify-content: space-between;
 }
 .homepage-empty {
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
   text-transform: uppercase;
 }
 .homepage-empty__warning {
@@ -189,7 +234,7 @@ main {
   margin-top: 1rem;
   width: 310px;
   font-weight: bold;
-  color: #e63030;
+  color: #c02626;
 }
 .homepage-container {
   display: flex;
@@ -212,21 +257,21 @@ main {
   font-weight: bold;
 }
 .homepage-container__posts-info {
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
   font-size: 1.2rem;
   font-weight: bold;
 }
 .loading-container {
   text-transform: uppercase;
   font-size: 1.4rem;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
   font-weight: bold;
-  color: #4b6fd1;
+  color: #ff8400;
 }
 .homepage-container__posts-title {
   text-transform: uppercase;
   font-size: 1.4rem;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
 }
 /* -------------------------------------------------HOTELSPAGE------------------------------------------------------ */
 .hotels-container {
@@ -245,23 +290,28 @@ main {
 .login-form__login {
   text-transform: uppercase;
   font-size: 1.4rem;
-  font-family: 'Agency FB', arial;
-  font-weight: bold;
-  color: #4b6fd1;
+  font-family: 'ralewaythin', arial;
 }
-/* -------------------------------------------USER-/POSTSPAGE--------------------------------------------- */
-.user-post__heading {
+.login-form__login-button:hover {
+  background-color: #ff8400;
+}
+.login-form__login-button:active {
+  background-color: #193c40;
+}
+
+/* -------------------------------------------ADMIN-/POSTSPAGE--------------------------------------------- */
+.admin-post__heading {
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-transform: uppercase;
 }
-.user-card {
+.admin-card {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.user-card__card {
+.admin-card__card {
   display: flex;
   flex-direction: column;
   width: 333px;
@@ -272,49 +322,49 @@ main {
   border: solid 1px #494949;
   border-radius: 2%;
 }
-.user-card a {
+.admin-card a {
   text-decoration: none;
 }
-.user-card__card:hover {
+.admin-card__card:hover {
   background-color: #dadada;
   color: #000000;
 }
-.user-card__title {
+.admin-card__title {
   font-weight: bold;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
   text-transform: uppercase;
 }
-.userpage-home {
+.admin-home {
   display: flex;
   justify-content: center;
   text-transform: uppercase;
 }
-.userpage-home a {
+.admin-home a {
   font-size: 1.4rem;
   font-weight: bold;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
   text-decoration: none;
 }
-.userpage-home a:hover {
-  color: #4b6fd1;
+.admin-home a:hover {
+  color: #ff8400;
 }
-.userpage-home a:active {
-  color: #2ea82e;
+.admin-home a:active {
+  color: #193c40;
 }
 .spinner {
   text-transform: uppercase;
   font-size: 1.4rem;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
   font-weight: bold;
-  color: #4b6fd1;
+  color: #ff8400;
 }
-.searchbar-user {
+.searchbar-admin {
   padding-top: 1rem;
   max-width: 333px;
 }
 .new-post {
   text-transform: uppercase;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
   font-size: 1.3rem;
   font-weight: bold;
 }
@@ -323,10 +373,10 @@ main {
   text-decoration: none;
 }
 .new-post a:hover {
-  color: #4b6fd1;
+  color: #ff8400;
 }
 .postlist-empty {
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
   text-transform: uppercase;
 }
 .postlist-empty__warning {
@@ -334,21 +384,21 @@ main {
   margin-top: 1rem;
   width: 310px;
   font-weight: bold;
-  color: #e63030;
+  color: #c02626;
 }
 /* -------------------------------------------------ADDPOSTPAGE------------------------------------------------------ */
 .add-post__submit {
   text-transform: uppercase;
   font-size: 1.4rem;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
   font-weight: bold;
-  color: #4b6fd1;
+  color: #ff8400;
 }
 .postsmedia-dropdown__searchbar {
   padding: 1rem 1rem 0rem 1rem;
 }
 .postsmedia-dropdown__empty {
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
   text-transform: uppercase;
   text-align: center;
 }
@@ -357,7 +407,7 @@ main {
   padding: 1rem;
   width: 310px;
   font-weight: bold;
-  color: #e63030;
+  color: #c02626;
 }
 /* -------------------------------------------------EDITPOSTPAGE------------------------------------------------------ */
 .update-container {
@@ -368,7 +418,7 @@ main {
   text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: bold;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
   padding: 1rem 1rem 1rem 0rem;
 }
 .update-container__success-icon {
@@ -378,7 +428,7 @@ main {
 }
 .update-button__group {
   padding-top: 1rem;
-  font-family: 'Agency FB', arial;
+  font-family: 'ralewaythin', arial;
 }
 .delete-button {
   padding: 0.7rem 1.3rem;
@@ -387,12 +437,12 @@ main {
 }
 .update-button__group-button {
   padding: 0.7rem 1.3rem;
-  background-color: #4b6fd1;
+  background-color: #ff8400;
   text-transform: uppercase;
   font-size: 1.1rem;
 }
 .update-button__group-button:hover {
-  background-color: #3f5db1;
+  background-color: #ff8400;
 }
 
 @media only screen and (max-width: 500px) {
@@ -403,7 +453,7 @@ main {
     display: flex;
     justify-content: space-around;
   }
-  .navbar-menu__user {
+  .navbar-menu__admin {
     display: flex;
     flex-direction: column;
   }

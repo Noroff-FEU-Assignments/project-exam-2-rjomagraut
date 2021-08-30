@@ -1,5 +1,5 @@
 import Heading from "../../layout/Heading";
-import useAxios from "../../../hooks/axios";
+import useAxios from "../../../hooks/useAxios";
 import { useState, useEffect } from "react";
 import {SearchBar} from "../../../filter/SearchField";
 import Card from "react-bootstrap/Card";
@@ -57,7 +57,7 @@ export default function HotelsPage() {
 			<Heading size="1" className="homepage-heading" content="Welcome to WIKI-SW" />
 			<SearchBar searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
 		</div>
-		<Heading size="2" className="homepage-heading" content="To edit posts go to you're userpage." />
+		<Heading size="2" className="homepage-heading" content="To edit posts go to you're admin." />
 		<div className="homepage-empty">
           {filteredPosts.length > 0 ? (
             filteredPosts.map((post) => {
@@ -72,7 +72,7 @@ export default function HotelsPage() {
 		<div className="homepage-container">
 			{filteredPosts.map((post) => {
 				return (
-					<Card className="homepage-container__posts" title="To edit posts go to you're userpage">
+					<Card className="homepage-container__posts" title="To edit posts go to you're admin">
 					<Card.Body key={post.id}>
 						<Card.Title className="homepage-container__posts-title">{post.title.rendered}</Card.Title>
 						<p>{post.excerpt.rendered}</p>
