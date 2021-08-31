@@ -1,13 +1,20 @@
 import Heading from "../../layout/Heading";
+import EnquireModalShow from "./EnquireModal";
+import Bergen from "../../../images/bergen.jpg"
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
 	return (
 		<>
-		<Heading content="Homepage" />
-		    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+		<div className="homepage-top">
+			<Heading content="Welcome" />
+			<EnquireModalShow />
+		</div>
+
+		<div className="homepage-imagecontainer">
+			<Link className="homepage-imagecontainer__link" to="/accommodations"><button className="homepage-imagecontainer__button">Go to accommodations</button></Link><img className="homepage-imagecontainer__image" src={Bergen} alt="Bryggen in Bergen" title="Bryggen in Bergen"></img>
+		</div>
+
 		</>
 	);
 }

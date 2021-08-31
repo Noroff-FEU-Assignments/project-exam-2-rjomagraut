@@ -27,7 +27,7 @@ export default function NavBar() {
 			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className="mr-auto navbar-menu__admin">
 				<Link to="/">Home</Link>
-				<Link to="/hotels">Hotels</Link>
+				<Link to="/accommodations">Booking</Link>
 				<Link to="/contact">Contact</Link>
 				</Nav>
 				<Nav className="navbar-menu__admin">

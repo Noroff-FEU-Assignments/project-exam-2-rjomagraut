@@ -16,7 +16,7 @@ const filterPosts = (posts, request) => {
     });
 };
 
-export default function HotelsPage() {
+export default function AccommodationsPage() {
 	const { search } = window.location;
 	const [posts, setPosts] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -53,32 +53,32 @@ export default function HotelsPage() {
 
 	return (
 		<>
-		<div className="homepage-searchbar">
-			<Heading size="1" className="homepage-heading" content="Welcome to WIKI-SW" />
+		<div className="accommodations-searchbar">
+			<Heading size="1" className="accommodations-heading" content="Welcome to WIKI-SW" />
 			<SearchBar searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
 		</div>
-		<Heading size="2" className="homepage-heading" content="To edit posts go to you're admin." />
-		<div className="homepage-empty">
+		<Heading size="2" className="accommodations-heading" content="To edit posts go to you're admin." />
+		<div className="accommodations-empty">
           {filteredPosts.length > 0 ? (
             filteredPosts.map((post) => {
               return <div key={post.id}></div>;
             })
           ) : (
-            <div className="homepage-empty__warning">
+            <div className="accommodations-empty__warning">
               There are no posts with that name <i class="far fa-frown"></i>
             </div>
           )}
         </div>	
-		<div className="homepage-container">
+		<div className="accommodations-container">
 			{filteredPosts.map((post) => {
 				return (
-					<Card className="homepage-container__posts" title="To edit posts go to you're admin">
+					<Card className="accommodations-container__posts" title="To edit posts go to you're admin">
 					<Card.Body key={post.id}>
-						<Card.Title className="homepage-container__posts-title">{post.title.rendered}</Card.Title>
+						<Card.Title className="accommodations-container__posts-title">{post.title.rendered}</Card.Title>
 						<p>{post.excerpt.rendered}</p>
-						<p><span className="homepage-container__posts-info">Date publised: </span>{post.date}</p>
-						<p><span className="homepage-container__posts-info">Date modified: </span>{post.modified}</p>
-						<p><span className="homepage-container__posts-info">Status: </span>{post.status}</p>
+						<p><span className="accommodations-container__posts-info">Date publised: </span>{post.date}</p>
+						<p><span className="accommodations-container__posts-info">Date modified: </span>{post.modified}</p>
+						<p><span className="accommodations-container__posts-info">Status: </span>{post.status}</p>
 					</Card.Body>
 					</Card>
 				);

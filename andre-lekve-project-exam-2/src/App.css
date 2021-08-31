@@ -40,17 +40,18 @@
   margin-top: 1rem;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: 'vacations', arial;
   padding-bottom: 1rem;
+  color: #193c40;
 }
 h2 {
-  font-size: 1.5rem;
-  font-family: 'ralewaylight', arial;
+  font-size: 1.2rem;
+  font-family: 'ralewaymedium', arial;
 }
 h3 {
-  font-size: 1.2rem;
-  font-family: 'ralewaylight', arial;
+  font-size: 1rem;
+  font-family: 'ralewayregular', arial;
 }
 p {
   font-family: 'ralewaymedium', arial;
@@ -114,20 +115,16 @@ a {
 }
 /* ---------------------------------------------------NAVBAR------------------------------------------------------ */
 .navbar {
+  display: flex;
+  justify-content: center;
   background-color: #ffffff;
 }
 .navbar .container {
   margin: 0;
 }
-.navbar-left {
-  position: relative;
+.navbar i {
+  font-size: 1.3rem;
 }
-.navbar-right {
-  position: relative;
-  right: 0;
-  top: 0;
-}
-
 .navbar a {
   color: #000000;
   padding-right: 1rem;
@@ -160,7 +157,7 @@ a {
   font-family: 'ralewaymedium', arial;
   text-transform: uppercase;
   border: none;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   color: #000000;
   text-align: center;
   text-decoration: none;
@@ -220,29 +217,91 @@ main {
   font-size: 1rem;
 }
 /* -------------------------------------------------HOMEPAGE------------------------------------------------------ */
-.homepage-searchbar {
+.homepage-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.homepage-imagecontainer {
+  position: relative;
+  width: 100%;
+}
+.homepage-imagecontainer__image {
+  height: auto;
+  width: 100%;
+  border-radius: 5px;
+}
+.homepage-imagecontainer__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #ff8400;
+  font-family: 'ralewaymedium', arial;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  padding: 1.2rem;
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.homepage-imagecontainer__button:hover {
+  background-color: #193c40;
+}
+.enquire-container__heading-one {
+  padding-top: 1rem;
+}
+.enquire-container__heading-two {
+  padding: 5px 0 5px 0;
+}
+.enquire-container__button {
+  background-color: #ff8400;
+  font-family: 'ralewaymedium', arial;
+  text-transform: uppercase;
+  border: none;
+  font-size: 0.8rem;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.enquire-container__button:hover {
+  background-color: #193c40;
+}
+/* -------------------------------------------------ACCOMMODATIONSPAGE------------------------------------------------------ */
+.accommodations-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.accommodations-searchbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.homepage-empty {
+.accommodations-empty {
   font-family: 'ralewaythin', arial;
   text-transform: uppercase;
 }
-.homepage-empty__warning {
+.accommodations-empty__warning {
   font-size: 1.3rem;
   margin-top: 1rem;
   width: 310px;
   font-weight: bold;
   color: #c02626;
 }
-.homepage-container {
+.accommodations-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.homepage-container__posts {
+.accommodations-container__posts {
   display: flex;
   flex-direction: column;
   width: 333px;
@@ -253,10 +312,10 @@ main {
   border: solid 1px #343a40;
   border-radius: 2%;
 }
-.homepage-container__posts-title {
+.accommodations-container__posts-title {
   font-weight: bold;
 }
-.homepage-container__posts-info {
+.accommodations-container__posts-info {
   font-family: 'ralewaythin', arial;
   font-size: 1.2rem;
   font-weight: bold;
@@ -268,16 +327,10 @@ main {
   font-weight: bold;
   color: #ff8400;
 }
-.homepage-container__posts-title {
+.accommodations-container__posts-title {
   text-transform: uppercase;
   font-size: 1.4rem;
   font-family: 'ralewaythin', arial;
-}
-/* -------------------------------------------------HOTELSPAGE------------------------------------------------------ */
-.hotels-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
 /* -------------------------------------------------CONTACTPAGE------------------------------------------------------ */

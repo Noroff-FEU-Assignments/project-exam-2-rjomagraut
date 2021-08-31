@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./components/pages/home/HomePage";
-import HotelsPage from "./components/pages/hotels/HotelsPage";
+import AccommodationsPage from "./components/pages/accommodations/AccommodationsPage";
 import ContactPage from "./components/pages/contact/ContactPage";
 import AdminPage from "./components/pages/admin/AdminPage";
 import LoginPage from "./components/pages/login/LoginPage";
@@ -26,8 +26,8 @@ function App() {
 						<Route exact path="/">
 							<HomePage />
 						</Route>
-            			<Route exact path="/hotels">
-							<HotelsPage />
+            			<Route exact path="/accommodations">
+							<AccommodationsPage />
 						</Route>
             			<Route exact path="/contact">
 							<ContactPage />
