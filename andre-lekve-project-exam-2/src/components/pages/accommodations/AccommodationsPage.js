@@ -42,22 +42,16 @@ export default function AccommodationsPage() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	if (loading) return <div className="loading-container">Loading posts... <Spinner className="loading-container__spinner" animation="border" /></div>;
-	if (error) return <><h1 className="error-h1">{"Welcome to WIKI-SW"}</h1>
-						<h2 className="error-h2">{"You need to login to see the posts."}</h2>
-						<p className="error-text">{'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magn\
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis\
-                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint\
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."'}</p>
-					<div className="error-imagecontainer"><img className="error-imagecontainer__image" src="https://live.staticflickr.com/2465/3951143570_20b4eccd3f_b.jpg" alt="The droids we're googling for by DocChewbacca is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/" title="The droids we're googling for"></img><p className="error-imagecontainer__text">{"The droids we're googling for by DocChewbacca is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/"}</p></div></>;
+	if (loading) return <div className="loading-container">Loading accommodations... <Spinner className="loading-container__spinner" animation="border" /></div>;
+	if (error) return <div className="loading-container__warning">Oops... Something went wrong when loading the accommodations <i class="fas fa-exclamation-circle"></i></div>;
 
 	return (
 		<>
 		<div className="accommodations-searchbar">
-			<Heading size="1" className="accommodations-heading" content="Welcome to WIKI-SW" />
+			<Heading size="1" className="accommodations-heading" content="Accommodations" />
 			<SearchBar searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
 		</div>
-		<Heading size="2" className="accommodations-heading" content="To edit posts go to you're admin." />
+		<Heading size="3" className="accommodations-heading" content="Take a look through our hotels, B&Bs and guesthouses and book your vacation now." />
 		<div className="accommodations-empty">
           {filteredPosts.length > 0 ? (
             filteredPosts.map((post) => {
@@ -65,7 +59,7 @@ export default function AccommodationsPage() {
             })
           ) : (
             <div className="accommodations-empty__warning">
-              There are no posts with that name <i class="far fa-frown"></i>
+              There are no posts with that name <i class="fas fa-exclamation-circle"></i>
             </div>
           )}
         </div>	

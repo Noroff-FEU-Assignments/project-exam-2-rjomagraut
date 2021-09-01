@@ -48,7 +48,7 @@ export default function PostList() {
 
 	if (loading) return <div className="spinner">Loading... <Spinner className="spinner-loader" animation="border" /></div>;
 
-	if (error) return <div>Couldn't find any posts</div>;
+	if (error) return <div className="postlist-empty__warning">Couldn't find any posts <i class="fas fa-exclamation-circle"></i></div>;
 
 	return (
 <>
@@ -65,7 +65,7 @@ export default function PostList() {
             })
           ) : (
             <div className="postlist-empty__warning">
-              There are no posts with that name <i class="far fa-frown"></i>
+              There are no posts with that name <i class="fas fa-exclamation-circle"></i>
             </div>
           )}
         </div>	

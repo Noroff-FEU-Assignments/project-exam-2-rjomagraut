@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import Heading from "../../../layout/Heading";
 import useAxios from "../../../../hooks/useAxios";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import {SearchBarMedia} from "../../../../filter/SearchField";
@@ -40,29 +41,32 @@ export default function PostsMediaDropdown({ register }) {
 
 	return (
 		
-		<NavDropdown className="postsmedia-dropdown" title="Media options" id="collasible-nav-dropdown" {...register("featured_media")}>
+	<div className="accommodations-top">
+		<Heading size="1" className="accommodations-heading" content="Accommodations" />
+		<NavDropdown className="accommodations-dropdown" title="Media options" id="collasible-nav-dropdown" {...register("featured_media")}>
 			<SearchBarMedia searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
-			<div className="postsmedia-dropdown__empty">
+			<div className="accommodations-dropdown__empty">
           {filteredMedia.length > 0 ? (
-            filteredMedia.map((media) => {
-              return <div key={media.id}></div>;
+            filteredMedia.map((post) => {
+              return <div key={post.id}></div>;
             })
           ) : (
-            <div className="postsmedia-dropdown__empty-warning">
-              No media with that name <i class="far fa-frown"></i>
+            <div className="accommodations-empty__warning">
+              There are no accommodations with that name <i class="fas fa-exclamation-circle"></i>
             </div>
           )}
         </div>	
-			{filteredMedia.map((media) => {
+			{filteredMedia.map((post) => {
 				return (
 					<>
-					<NavDropdown.Item key={media.id} value={media.id}>
-						{media.title.rendered}
+					<NavDropdown.Item key={post.id} value={post.id}>
+						{post.title.rendered}
 					</NavDropdown.Item>
 					</>
 				);
 			})}
 		</NavDropdown>
+		</div>
 		
 	);
 }

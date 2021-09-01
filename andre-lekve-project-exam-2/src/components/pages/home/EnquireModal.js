@@ -30,7 +30,7 @@ export default function EnquireModalShow() {
   return (
     <>
       <Button className="enquire-container__button" onClick={() => setModalShow(true)}>
-        Quick question?
+        <i class="fas fa-share"></i> Quick question
       </Button>
 
       <EnquireModal

@@ -3,8 +3,6 @@ import { Link, useHistory } from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Navbar";
-// import navImgLeft from "../../images/nav-left.jpg";
-// import navImgRight from "../../images/nav-right.jpg";
 import logo from "../../images/logo.jpg";
 import Container from "react-bootstrap/Container";
 export default function NavBar() {
@@ -25,10 +23,10 @@ export default function NavBar() {
 			<Navbar.Brand href="/"><img src={logo} alt="Holidaze logo"/></Navbar.Brand>
 			<Navbar.Toggle className="navbar-menu" aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
-				<Nav className="mr-auto navbar-menu__admin">
-				<Link to="/">Home</Link>
-				<Link to="/accommodations">Booking</Link>
-				<Link to="/contact">Contact</Link>
+				<Nav className="mr-auto navbar-menu__text">
+				<Link to="/"><i class="fas fa-home"></i><span className="navbar-menu__text-font">Home</span></Link>
+				<Link to="/accommodations"><i class="fas fa-calendar-alt"></i><span className="navbar-menu__text-font">Booking</span></Link>
+				<Link to="/contact"><i class="fas fa-envelope"></i><span className="navbar-menu__text-font">Contact</span></Link>
 				</Nav>
 				<Nav className="navbar-menu__admin">
 								{auth ? (

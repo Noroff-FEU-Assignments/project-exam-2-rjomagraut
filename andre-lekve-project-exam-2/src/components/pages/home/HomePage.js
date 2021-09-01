@@ -7,7 +7,7 @@ export default function HomePage() {
 	return (
 		<>
 		<div className="homepage-top">
-			<Heading content="Welcome" />
+			<Heading content="Welcome to Holidaze" />
 			<EnquireModalShow />
 		</div>
 
