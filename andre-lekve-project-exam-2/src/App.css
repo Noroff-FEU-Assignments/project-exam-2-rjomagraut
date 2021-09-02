@@ -277,7 +277,8 @@ main {
   background-color: #193c40;
 }
 .image-carousel {
-  padding-top: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
   width: 100%;
 }
 .image-carousel__heading-icon {
@@ -288,19 +289,25 @@ main {
   justify-content: baseline;
   padding-bottom: 8px;
 }
-.image-carousel__container-heading {
-  color: #ffffff;
+.carousel-caption__container-heading {
+  padding-top: 4px;
+  font-weight: bold;
+  color: #ff8400;
 }
-.image-carousel__container-text {
-  color: #ffffff;
+.carousel-caption__container-text {
+  color: #000000;
+  padding-bottom: 4px;
 }
 .image-carousel__container-item {
-  background-color: #00000093;
+  background-color: #ff84003a;
   border-radius: 5px;
   text-align: center;
 }
-.image-carousel__container-caption {
-  background-color: #00000093;
+ol.carousel-indicators li.active {
+  background-color: #ff8400;
+}
+.carousel-caption__container {
+  background-color: #ffffffc7;
 }
 /* -------------------------------------------------ACCOMMODATIONSPAGE------------------------------------------------------ */
 .accommodations-container {
