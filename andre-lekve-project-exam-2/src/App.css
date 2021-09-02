@@ -276,6 +276,32 @@ main {
 .enquire-container__button:hover {
   background-color: #193c40;
 }
+.image-carousel {
+  padding-top: 3rem;
+  width: 100%;
+}
+.image-carousel__heading-icon {
+  margin-left: 5px;
+}
+.image-carousel__heading {
+  display: flex;
+  justify-content: baseline;
+  padding-bottom: 8px;
+}
+.image-carousel__container-heading {
+  color: #ffffff;
+}
+.image-carousel__container-text {
+  color: #ffffff;
+}
+.image-carousel__container-item {
+  background-color: #00000093;
+  border-radius: 5px;
+  text-align: center;
+}
+.image-carousel__container-caption {
+  background-color: #00000093;
+}
 /* -------------------------------------------------ACCOMMODATIONSPAGE------------------------------------------------------ */
 .accommodations-container {
   display: flex;
