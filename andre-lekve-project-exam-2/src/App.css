@@ -394,7 +394,17 @@ ol.carousel-indicators li.active {
   background-color: #193c40;
 }
 
-/* -------------------------------------------ADMIN-/POSTSPAGE--------------------------------------------- */
+/* --------------------------------------------------ADMINPAGE----------------------------------------------- */
+.adminpage-home {
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.adminpage-home__link-text {
+  color: #ff8400;
+}
+/* -------------------------------------------------POSTSPAGE------------------------------------------------ */
 .admin-post__heading {
   padding-top: 1rem;
   padding-bottom: 1rem;

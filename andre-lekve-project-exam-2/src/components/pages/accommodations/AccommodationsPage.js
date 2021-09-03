@@ -69,7 +69,7 @@ export default function AccommodationsPage() {
 					<Card className="accommodations-container__posts" title="To edit posts go to you're admin">
 					<Card.Body key={post.id}>
 						<Card.Title className="accommodations-container__posts-title">{post.title.rendered}</Card.Title>
-						<p>{post.excerpt.rendered}</p>
+						<p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}/>
 						<p><span className="accommodations-container__posts-info">Date publised: </span>{post.date}</p>
 						<p><span className="accommodations-container__posts-info">Date modified: </span>{post.modified}</p>
 						<p><span className="accommodations-container__posts-info">Status: </span>{post.status}</p>

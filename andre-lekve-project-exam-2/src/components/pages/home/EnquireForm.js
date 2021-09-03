@@ -7,8 +7,6 @@ import ValidationError from "../../common/ValidationError";
 
 const schema = yup.object().shape({
     name: yup.string().required("Please enter your name").min(3, "Your first name must be at least 4 characters"),
-    address: yup.string().required("Please enter your address").min(2, "Your address must be at least 2 characters"),
-    postalCode: yup.string().required("Please enter your postal code").min(8, "Your postal code must be at least 8 characters"),
     email: yup.string().required("Please enter an email address").email("Please enter a valid email address"),
     message: yup.string().required("Please enter your message").min(10, "The message must be at least 10 characters"),
 });

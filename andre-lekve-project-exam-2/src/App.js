@@ -12,6 +12,8 @@ import "./App.css";
 import PostPage from "./components/pages/admin/adminPosts/PostPage";
 import AddPost from "./components/pages/admin/adminPosts/AddPost";
 import EditPost from "./components/pages/admin/adminPosts/EditPost";
+import BookingsPage from "./components/pages/admin/adminBookings/BookingsPage";
+import EnquiriesPage from "./components/pages/admin/adminEnquiries/EnquiriesPage";
 import Container from "react-bootstrap/Container";
 
 function App() {
@@ -43,6 +45,12 @@ function App() {
 						</Route>
 						<Route path="/admin/posts/edit/:id">
 							<EditPost />
+						</Route>
+						<Route path="/admin/enquiries" exact>
+							<EnquiriesPage />
+						</Route>
+						<Route path="/admin/bookings" exact>
+							<BookingsPage />
 						</Route>
 						<Route path="/login">
 							<LoginPage />
