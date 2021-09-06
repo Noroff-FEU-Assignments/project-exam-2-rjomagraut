@@ -1,5 +1,6 @@
 import Heading from "../../layout/Heading";
-import useAxios from "../../../hooks/useAxios";
+import useAxiosNoAuth from "../../../hooks/useAxiosNoAuth";
+import FeaturedMedia from "./FeaturedMedia";
 import { useState, useEffect } from "react";
 import {SearchBar} from "../../../filter/SearchField";
 import Card from "react-bootstrap/Card";
@@ -24,7 +25,7 @@ export default function AccommodationsPage() {
     const request = new URLSearchParams(search).get('search');
     const [searchRequest, setSearchRequest] = useState(request || '');
 	const filteredPosts = filterPosts(posts, searchRequest);
-	const getApi = useAxios();
+	const getApi = useAxiosNoAuth();
 
 	useEffect(function () {
 		async function getPosts() {
@@ -66,13 +67,15 @@ export default function AccommodationsPage() {
 		<div className="accommodations-container">
 			{filteredPosts.map((post) => {
 				return (
-					<Card className="accommodations-container__posts" title="To edit posts go to you're admin">
-					<Card.Body key={post.id}>
+					<Card>
+					<Card.Body className="accommodations-container__body"key={post.id}>
+						<FeaturedMedia className="accommodations-container__image" key={post.id} id={post.featured_media} />
+						<div className="accommodations-container__posts">
 						<Card.Title className="accommodations-container__posts-title">{post.title.rendered}</Card.Title>
 						<p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}/>
-						<p><span className="accommodations-container__posts-info">Date publised: </span>{post.date}</p>
-						<p><span className="accommodations-container__posts-info">Date modified: </span>{post.modified}</p>
-						<p><span className="accommodations-container__posts-info">Status: </span>{post.status}</p>
+						<p><span className="accommodations-container__posts-info">Price: </span>{post.tags}</p>
+						<p><span className="accommodations-container__posts-info">Rating:  </span>{post.status}</p>
+						</div>
 					</Card.Body>
 					</Card>
 				);
