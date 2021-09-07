@@ -414,6 +414,26 @@ ol.carousel-indicators li.active {
 .adminpage-home__link-text {
   color: #ff8400;
 }
+/* --------------------------------------------------BOOKINGPAGE----------------------------------------------- */
+.heading-bookings {
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+/* --------------------------------------------------ENQUIRYPAGE----------------------------------------------- */
+.enquiry-container__submit {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'ralewaythin', arial;
+  font-weight: bold;
+  color: #ff8400;
+}
+.enquiry-container__submit-button {
+  background-color: #ff8400;
+}
+.enquiry-container__submit-button:hover {
+  background-color: #193c40;
+}
 /* -------------------------------------------------POSTSPAGE------------------------------------------------ */
 .admin-post__heading {
   padding-top: 1rem;

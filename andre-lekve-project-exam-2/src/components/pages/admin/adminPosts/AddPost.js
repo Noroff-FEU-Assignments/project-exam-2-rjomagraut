@@ -68,6 +68,16 @@ export default function AddPost() {
 					</Form.Group>
 
 					<Form.Group>
+						<Form.Control as="textarea" rows={1} placeholder="Slug" {...register("slug")}  />
+						{errors.slug && <ValidationError>{errors.slug.message}</ValidationError>}
+					</Form.Group>
+
+					<Form.Group>
+						<Form.Control as="textarea" rows={1} placeholder="Price" {...register("price_field")}  />
+						{errors.price_field && <ValidationError>{errors.price_field.message}</ValidationError>}
+					</Form.Group>
+
+					<Form.Group>
 						<PostsMediaDropdown {...register}  />
 					</Form.Group>
 					<Form.Group>

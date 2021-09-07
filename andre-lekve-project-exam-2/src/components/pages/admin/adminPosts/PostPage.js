@@ -1,4 +1,5 @@
 import AdminPage from "../AdminPage";
+import Heading from "../../../layout/Heading";
 import PostList from "./PostList";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
@@ -10,6 +11,9 @@ export default function PostPage() {
 		<>
 		<AdminPage/>
 		<Tab.Container id="left-tabs-example" defaultActiveKey="first">
+			<div className="heading-bookings">
+			<Heading content="Accommodations" />
+			</div>
 		<Row>
 			<Col>
 			<Nav variant="pills" className="flex-column">

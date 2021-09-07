@@ -78,6 +78,8 @@ export default function PostList() {
 						<div className="admin-card__inside">
 						<Card.Title className="admin-card__title">{post.title.rendered}</Card.Title>	
 						<Card.Text>{post.excerpt.rendered}</Card.Text>
+						<Card.Text>{post.slug}</Card.Text>
+						<Card.Text>Price{post.price_field}</Card.Text>
 						</div>
 					</Card.Body>
 					</Card>
