@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./components/pages/home/HomePage";
 import AccommodationsPage from "./components/pages/accommodations/AccommodationsPage";
+import SingleAccommodation from "./components/pages/accommodations/SingleAccommodation";
 import ContactPage from "./components/pages/contact/ContactPage";
 import AdminPage from "./components/pages/admin/AdminPage";
 import LoginPage from "./components/pages/login/LoginPage";
@@ -30,6 +31,9 @@ function App() {
 						</Route>
             			<Route exact path="/accommodations">
 							<AccommodationsPage />
+						</Route>
+						<Route path="/accommodations/:id">
+							<SingleAccommodation />
 						</Route>
             			<Route exact path="/contact">
 							<ContactPage />

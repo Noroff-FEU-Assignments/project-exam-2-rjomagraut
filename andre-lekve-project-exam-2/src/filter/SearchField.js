@@ -34,7 +34,7 @@ export const SearchBarMedia = ({ searchRequest, setSearchRequest }) => {
         <Form className="postsmedia-dropdown__searchbar" action="/" method="get" autoComplete="off" onSubmit={onSubmit}>
              <InputGroup className="mb-3">
                  <InputGroup.Prepend>
-            <InputGroup.Text id="basic-addon1"><i class="searchbar-icon fas fa-search"></i></InputGroup.Text>
+            <InputGroup.Text id="basic-addon1"><i className="searchbar-icon fas fa-search"></i></InputGroup.Text>
             </InputGroup.Prepend>
                 <FormControl value={searchRequest}  onInput={(search) => setSearchRequest(search.target.value)} type="text" placeholder="Search for media..." name="search"/>
              </InputGroup>

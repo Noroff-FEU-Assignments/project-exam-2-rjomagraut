@@ -84,7 +84,7 @@ export default function EditPost() {
 			</div>
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<div className="update-container">
-					{updated && <div className="update-container__success">The post was successfully updated<i class="far fa-check-circle update-container__success-icon"></i></div>}
+					{updated && <div className="update-container__success">The post was successfully updated<i className="far fa-check-circle update-container__success-icon"></i></div>}
 				</div>
 				
 

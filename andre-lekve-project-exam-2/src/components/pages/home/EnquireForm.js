@@ -46,7 +46,9 @@ export default function EnquireModal() {
              <Form className="enquiry-container" onSubmit={handleSubmit(onSubmit)}>
 				{serverError && <ValidationError>{serverError}</ValidationError>}
 				<fieldset disabled={rendering}>
-
+					
+					
+					<Form.Control type="hidden" {...register("id")} />
 					<Form.Group>
                         <Form.Control placeholder="Full name..." {...register("author_name")} />
                         {errors.author_name && <ValidationError>{errors.author_name.message}</ValidationError>}

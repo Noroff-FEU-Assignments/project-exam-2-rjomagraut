@@ -17,7 +17,7 @@ export function EnquireModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h2 className="enquire-container__heading-two">Something on your mind, let us know <i class="far fa-smile"></i></h2>
+        <h2 className="enquire-container__heading-two">Something on your mind, let us know <i className="far fa-smile"></i></h2>
         <EnquireForm />
       </Modal.Body>
     </Modal>
@@ -30,7 +30,7 @@ export default function EnquireModalShow() {
   return (
     <>
       <Button className="enquire-container__button" onClick={() => setModalShow(true)}>
-        <i class="fas fa-share"></i> Quick question
+        <i className="fas fa-share"></i> Quick question
       </Button>
 
       <EnquireModal

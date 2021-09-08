@@ -52,7 +52,7 @@ export default function PostsMediaDropdown({ register }) {
             })
           ) : (
             <div className="accommodations-empty__warning">
-              There are no accommodations with that name <i class="fas fa-exclamation-circle"></i>
+              There are no accommodations with that name <i className="fas fa-exclamation-circle"></i>
             </div>
           )}
         </div>	

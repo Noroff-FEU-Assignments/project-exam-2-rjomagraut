@@ -48,7 +48,7 @@ export default function PostList() {
 
 	if (loading) return <div className="spinner">Loading... <Spinner className="spinner-loader" animation="border" /></div>;
 
-	if (error) return <div className="postlist-empty__warning">Couldn't find any posts <i class="fas fa-exclamation-circle"></i></div>;
+	if (error) return <div className="postlist-empty__warning">Couldn't find any posts <i className="fas fa-exclamation-circle"></i></div>;
 
 	return (
 <>
@@ -56,7 +56,7 @@ export default function PostList() {
 			<SearchBar searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
 		</div>	
 		<div className="new-post">
-			<Link eventKey="first" to="/admin/posts/add">Add a new post <i class="fas fa-plus"></i></Link>
+			<Link eventKey="first" to="/admin/posts/add">Add a new post <i className="fas fa-plus"></i></Link>
 		</div>
 		<div className="postlist-empty">
           {filteredPosts.length > 0 ? (
@@ -65,7 +65,7 @@ export default function PostList() {
             })
           ) : (
             <div className="postlist-empty__warning">
-              There are no posts with that name <i class="fas fa-exclamation-circle"></i>
+              There are no posts with that name <i className="fas fa-exclamation-circle"></i>
             </div>
           )}
         </div>	

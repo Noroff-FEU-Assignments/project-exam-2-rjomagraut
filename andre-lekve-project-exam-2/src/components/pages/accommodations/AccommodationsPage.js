@@ -1,6 +1,7 @@
 import Heading from "../../layout/Heading";
 import useAxiosNoAuth from "../../../hooks/useAxiosNoAuth";
 import FeaturedMedia from "./FeaturedMedia";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {SearchBar} from "../../../filter/SearchField";
 import Card from "react-bootstrap/Card";
@@ -44,7 +45,7 @@ export default function AccommodationsPage() {
 	}, []);
 
 	if (loading) return <div className="loading-container">Loading accommodations... <Spinner className="loading-container__spinner" animation="border" /></div>;
-	if (error) return <div className="loading-container__warning">Oops... Something went wrong when loading the accommodations <i class="fas fa-exclamation-circle"></i></div>;
+	if (error) return <div className="loading-container__warning">Oops... Something went wrong when loading the accommodations <i className="fas fa-exclamation-circle"></i></div>;
 
 	return (
 		<>
@@ -60,15 +61,16 @@ export default function AccommodationsPage() {
             })
           ) : (
             <div className="accommodations-empty__warning">
-              There are no posts with that name <i class="fas fa-exclamation-circle"></i>
+              There are no posts with that name <i className="fas fa-exclamation-circle"></i>
             </div>
           )}
         </div>	
 		<div className="accommodations-container">
 			{filteredPosts.map((post) => {
 				return (
-					<Card>
-					<Card.Body className="accommodations-container__body"key={post.id}>
+					<Link className="accommodations-container__link" to={`/accommodations/${post.id}`}>
+					<Card className="accommodations-container__card">
+					<Card.Body className="accommodations-container__body" key={post.id}>
 						<FeaturedMedia className="accommodations-container__image" key={post.id} id={post.featured_media} />
 						<div className="accommodations-container__posts">
 						<Card.Title className="accommodations-container__posts-title">{post.title.rendered}</Card.Title>
@@ -78,6 +80,7 @@ export default function AccommodationsPage() {
 						</div>
 					</Card.Body>
 					</Card>
+					</Link>
 				);
 			})}
 		</div>

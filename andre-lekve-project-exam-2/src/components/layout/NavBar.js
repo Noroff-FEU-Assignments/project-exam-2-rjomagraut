@@ -24,9 +24,9 @@ export default function NavBar() {
 			<Navbar.Toggle className="navbar-menu" aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className="mr-auto navbar-menu__text">
-				<Link to="/"><i class="fas fa-home"></i><span className="navbar-menu__text-font">Home</span></Link>
-				<Link to="/accommodations"><i class="fas fa-calendar-alt"></i><span className="navbar-menu__text-font">Booking</span></Link>
-				<Link to="/contact"><i class="fas fa-envelope"></i><span className="navbar-menu__text-font">Contact</span></Link>
+				<Link to="/"><i className="fas fa-home"></i><span className="navbar-menu__text-font">Home</span></Link>
+				<Link to="/accommodations"><i className="fas fa-calendar-alt"></i><span className="navbar-menu__text-font">Booking</span></Link>
+				<Link to="/contact"><i className="fas fa-envelope"></i><span className="navbar-menu__text-font">Contact</span></Link>
 				</Nav>
 				<Nav className="navbar-menu__admin">
 								{auth ? (

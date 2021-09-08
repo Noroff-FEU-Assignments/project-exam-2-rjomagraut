@@ -16,7 +16,7 @@ export default function ImageCarousel() {
 	return (
         <>
         <div className="image-carousel">
-            <div className="image-carousel__heading"><Heading size="3" className="image-carousel__heading-text" content="Take a look at some of our accommodations that our visitors have taken" /><i class="fas fa-camera-retro image-carousel__heading-icon"></i></div>
+            <div className="image-carousel__heading"><Heading size="3" className="image-carousel__heading-text" content="Take a look at some of our accommodations that our visitors have taken" /><i className="fas fa-camera-retro image-carousel__heading-icon"></i></div>
             <Carousel className="image-carousel__container">
   <Carousel.Item interval={5000} className="image-carousel__container-item">
     <img className="image-carousel__container-image" src={Carousel1} alt="Small bed with a nice view" title="Small apartment with a nice view"></img>
