@@ -354,6 +354,7 @@ ol.carousel-indicators li.active {
 }
 .accommodations-container__card {
   display: flex;
+  flex-direction: column;
   margin-bottom: 1rem;
 }
 .accommodations-container__card:hover {
@@ -371,7 +372,9 @@ ol.carousel-indicators li.active {
   padding-left: 1rem;
 }
 .accommodations-container__posts-title {
-  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-family: 'ralewaythin', arial;
 }
 .accommodations-container__posts-info {
   font-family: 'ralewaythin', arial;
@@ -384,12 +387,6 @@ ol.carousel-indicators li.active {
   font-family: 'ralewaythin', arial;
   color: #ff8400;
 }
-.accommodations-container__posts-title {
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  font-family: 'ralewaythin', arial;
-}
-
 /* -------------------------------------------------CONTACTPAGE------------------------------------------------------ */
 .contact-container {
   display: flex;
