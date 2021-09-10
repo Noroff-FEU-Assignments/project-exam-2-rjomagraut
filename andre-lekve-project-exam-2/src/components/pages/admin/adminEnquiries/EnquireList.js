@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import useAxios from "../../../../hooks/useAxios";
 import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
+import ListGroupItem from "react-bootstrap/ListGroup";
 import Spinner from 'react-bootstrap/Spinner'
 
 
@@ -43,8 +45,10 @@ export default function EnquireList() {
 					<Card title="Click to edit or delete enquire" className="admin-card__card">
 					<Card.Body className="admin-card__body" key={enquire.id}>
 						<div className="admin-card__inside">
-						<Card.Title className="admin-card__title">Name: {enquire.author_name}</Card.Title>	
-						<Card.Title className="admin-card__title">Email: {enquire.author_email}</Card.Title>	
+						<Card.Title className="admin-card__title">Name: {enquire.author_name}</Card.Title>
+						<ListGroup className="list-group-flush">
+    						<ListGroupItem className="admin-card__email">Email: {enquire.author_email}</ListGroupItem>	
+						</ListGroup>	
 						<Card.Text>Message: {enquire.content.rendered}</Card.Text>
 						<Card.Text>Sent: {enquire.date}</Card.Text>
 						</div>
