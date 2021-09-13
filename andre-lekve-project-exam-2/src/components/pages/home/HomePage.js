@@ -1,7 +1,7 @@
 import Heading from "../../layout/Heading";
 import EnquireModalShow from "./EnquireModal";
 import ImageCarousel from "./ImageCarousel";
-import Bergen from "../../../images/bergen.jpg"
+import Bergen from "../../../images/bergen.jpg";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {

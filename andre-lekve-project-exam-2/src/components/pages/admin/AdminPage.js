@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Heading from "../../layout/Heading";
 import Nav from "react-bootstrap/Nav";
+import Holidaze from "../../../images/holidaze.png";
 
 export default function AdminPage({ children }) {
 	return (
@@ -20,6 +21,9 @@ export default function AdminPage({ children }) {
 				</Nav.Item>
 			</Nav>
 			<hr />
+			<div className="adminpage-imagecontainer">
+			<img className="adminpage-imagecontainer__image" src={Holidaze} alt="Bryggen in Bergen" title="Bryggen in Bergen"></img>
+		</div>
 		</>
 	);
 }

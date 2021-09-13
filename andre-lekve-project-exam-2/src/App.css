@@ -416,6 +416,10 @@ ol.carousel-indicators li.active {
 .adminpage-home__link-text {
   color: #ff8400;
 }
+.adminpage-imagecontainer {
+  display: flex;
+  justify-content: center;
+}
 /* --------------------------------------------------BOOKINGPAGE----------------------------------------------- */
 .heading-bookings {
   padding-top: 0.5rem;
