@@ -77,6 +77,7 @@ export default function AccommodationsPage() {
 						<p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}/>
 						<p><span className="accommodations-container__posts-info">Price: </span>{post.tags}</p>
 						<p><span className="accommodations-container__posts-info">Rating:  </span>{post.status}</p>
+						<p><span className="accommodations-container__posts-info">Accommodationnr:  </span>{post.id}</p>
 						</div>
 					</Card.Body>
 					</Card>

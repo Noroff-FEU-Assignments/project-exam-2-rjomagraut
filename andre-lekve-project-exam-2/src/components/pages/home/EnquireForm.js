@@ -9,6 +9,7 @@ import useAxios from "../../../hooks/useAxios";
 import Spinner from 'react-bootstrap/Spinner';
 
 const schema = yup.object().shape({
+	post: yup.string().required("Please enter accommodation-number").min(1, "Accommodation-number must be at least 1 number"),
     author_name: yup.string().required("Please enter your name").min(3, "Your first name must be at least 4 characters"),
     author_email: yup.string().required("Please enter an email address").email("Please enter a valid email address"),
     content: yup.string().required("Please enter your message").min(10, "The message must be at least 10 characters"),
@@ -29,7 +30,7 @@ export default function EnquireModal() {
 		setRendering(true);
 
 		try {
-			const response = await getApi.post("/wp/v2/pages/40", data); 
+			const response = await getApi.post("/wp/v2/comments", data); 
 			console.log(response.data);
 
 		} catch (error) {
@@ -38,14 +39,15 @@ export default function EnquireModal() {
 			setRendering(false);
 		}
 	}
-// "/contact-form-7/v1/contact-forms/20/feedback"
+
 	return (
         <>
              <Form className="enquiry-container" onSubmit={handleSubmit(onSubmit)}>
 				{serverError && <ValidationError>{serverError}</ValidationError>}
 				<fieldset disabled={rendering}>
 					<Form.Group>
-                        <Form.Control type="hidden" {...register("post")} />
+                       <Form.Control placeholder="Accommodationnr..." {...register("post")} />
+                        {errors.post && <ValidationError>{errors.post.message}</ValidationError>}
                     </Form.Group>
 
 					<Form.Group>

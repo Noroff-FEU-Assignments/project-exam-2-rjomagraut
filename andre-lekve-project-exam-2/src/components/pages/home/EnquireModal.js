@@ -17,7 +17,7 @@ export function EnquireModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h2 className="enquire-container__heading-two">Something on your mind, let us know <i className="far fa-smile"></i></h2>
+        <h2 className="enquire-container__heading-two">Something on your mind, send a message to the accommodation owners <i className="far fa-smile"></i></h2>
         <EnquireForm />
       </Modal.Body>
     </Modal>

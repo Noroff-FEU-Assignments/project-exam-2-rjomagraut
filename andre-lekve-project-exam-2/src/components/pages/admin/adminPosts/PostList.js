@@ -76,8 +76,8 @@ export default function PostList() {
 					<Card title="Click to edit or delete post" className="admin-card__card">
 					<Card.Body className="admin-card__body" key={post.id}>
 						<div className="admin-card__inside">
-						<Card.Title className="admin-card__title">{post.title.rendered}</Card.Title>	
-						<Card.Text>{post.excerpt.rendered}</Card.Text>
+						<Card.Title className="admin-card__title">{post.title.rendered}</Card.Title>
+						<Card.Text dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
 						<Card.Text>{post.slug}</Card.Text>
 						<Card.Text>Price{post.price_field}</Card.Text>
 						</div>
