@@ -1,11 +1,11 @@
 import AdminPage from "../AdminPage";
-import EnquireList from "./EnquireList"
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import ContactList from "./ContactList"
 
-export default function EnquiriesPage() {
+export default function AdminContactPage() {
 	return (
 		<>
 		<AdminPage/>
@@ -14,7 +14,7 @@ export default function EnquiriesPage() {
 			<Col>
 			<Nav variant="pills" className="flex-column">
 				<Nav.Item>
-				<EnquireList />
+				<ContactList />
 				</Nav.Item>
 			</Nav>
 			</Col>		

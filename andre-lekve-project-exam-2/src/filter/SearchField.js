@@ -17,7 +17,7 @@ export const SearchBar = ({ searchRequest, setSearchRequest }) => {
              
       
         
-                <Typeahead value={searchRequest}  onInput={(search) => setSearchRequest(search.target.value)} type="text" placeholder="Search for posts..." name="search"/>
+                <Typeahead value={searchRequest}  onInput={(search) => setSearchRequest(search.target.value)} type="text" placeholder="Find accommodation..." name="search"/>
             
         </Form>
     );

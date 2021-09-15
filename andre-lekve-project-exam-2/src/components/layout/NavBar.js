@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Navbar";
@@ -24,18 +24,18 @@ export default function NavBar() {
 			<Navbar.Toggle className="navbar-menu" aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className="mr-auto navbar-menu__text">
-				<Link to="/"><i className="fas fa-home"></i><span className="navbar-menu__text-font">Home</span></Link>
-				<Link to="/accommodations"><i className="fas fa-calendar-alt"></i><span className="navbar-menu__text-font">Booking</span></Link>
-				<Link to="/contact"><i className="fas fa-envelope"></i><span className="navbar-menu__text-font">Contact</span></Link>
+				<NavLink exact activeClassName="selected" to="/"><i className="fas fa-home"></i><span className="navbar-menu__text-font">Home</span></NavLink>
+				<NavLink activeClassName="selected" to="/accommodations"><i className="fas fa-calendar-alt"></i><span className="navbar-menu__text-font">Booking</span></NavLink>
+				<NavLink activeClassName="selected" to="/contact"><i className="fas fa-envelope"></i><span className="navbar-menu__text-font">Contact</span></NavLink>
 				</Nav>
 				<Nav className="navbar-menu__admin">
 								{auth ? (
 									<>
-										<Link to="/admin"><button className="admin-button">Admin Menu <i title="Admin Menu" className="fas fa-users-cog"></i></button></Link>
+										<NavLink to="/admin"><button className="admin-button">Admin Menu <i title="Admin Menu" className="fas fa-users-cog"></i></button></NavLink>
 										<button title="Logout" className="logout-button" onClick={logout}>Logout <i className="fas fa-sign-out-alt logout-icon"></i></button>
 									</>
 								) : (
-									<Link to="/login"><button title="Login" className="login-button">Admin <i className="fas fa-lock"/></button></Link>
+									<NavLink to="/login"><button title="Login" className="login-button">Admin <i className="fas fa-lock"/></button></NavLink>
 								)}
 					</Nav>
 			</Navbar.Collapse>

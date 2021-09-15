@@ -7,7 +7,6 @@ import ValidationError from "../../../common/ValidationError";
 import useAxios from "../../../../hooks/useAxios";
 import Heading from "../../../layout/Heading";
 import Form from "react-bootstrap/Form";
-import PostsMediaDropdown from "./PostsMediaDropdown";
 import AdminPage from "../AdminPage";
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
@@ -77,9 +76,6 @@ export default function AddPost() {
 						{errors.price_field && <ValidationError>{errors.price_field.message}</ValidationError>}
 					</Form.Group>
 
-					<Form.Group>
-						<PostsMediaDropdown {...register}  />
-					</Form.Group>
 					<Form.Group>
                         {rendering ? <div className="add-post__submit">Submitting your post... <Spinner className="add-post__submit-spinner" animation="border" /></div> : <Button className="add-post__submit-button button" variant="primary" type="submit">Submit</Button>}
                     </Form.Group>

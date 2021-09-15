@@ -136,6 +136,9 @@ a {
 .navbar-menu__text-font {
   padding-left: 5px;
 }
+nav a.selected {
+  color: #ff8400;
+}
 .navbar a:hover {
   color: #ff8400;
   padding-right: 1rem;
@@ -165,6 +168,10 @@ a {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+.admin-button {
+  display: flex;
+  align-items: baseline;
 }
 .navbar .logout-icon:hover {
   color: #ff8400;
@@ -275,6 +282,10 @@ main {
 }
 .enquire-container__button:hover {
   background-color: #193c40;
+}
+.enquire-container__heading-two {
+  font-family: 'ralewaylight', arial;
+  font-size: 1rem;
 }
 .image-carousel {
   padding-top: 1rem;
@@ -413,12 +424,25 @@ ol.carousel-indicators li.active {
   text-transform: uppercase;
   font-weight: bold;
 }
+.adminpage-home a {
+  text-decoration: none;
+}
 .adminpage-home__link-text {
+  color: #000000;
+}
+.adminpage-home__link-text:hover {
+  color: #ff8400;
+}
+.adminpage-home a.active {
   color: #ff8400;
 }
 .adminpage-imagecontainer {
   display: flex;
   justify-content: center;
+  padding-top: 35%;
+}
+.adminpage-imagecontainer__image {
+  width: 60%;
 }
 /* --------------------------------------------------BOOKINGPAGE----------------------------------------------- */
 .heading-bookings {
@@ -627,6 +651,23 @@ ol.carousel-indicators li.active {
   .featured-media__image {
     width: 100%;
     padding: 0.5rem;
+  }
+  /* --------------------------------------------------ADMINPAGE----------------------------------------------- */
+  .adminpage-home {
+    display: flex;
+    flex-direction: column;
+  }
+  .adminpage-home__link {
+    display: flex;
+    justify-content: center;
+  }
+  .adminpage-imagecontainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 50%;
+  }
+  .adminpage-imagecontainer__image {
+    width: 80%;
   }
   /* -----------------------------------------------------FOOTER-------------------------------------------------- */
   .footer {

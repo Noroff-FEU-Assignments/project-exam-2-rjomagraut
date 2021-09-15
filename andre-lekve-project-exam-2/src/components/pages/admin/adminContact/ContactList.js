@@ -5,14 +5,12 @@ import Spinner from 'react-bootstrap/Spinner'
 
 
 
-export default function EnquireList() {
+export default function ContactList() {
 
 	const [enquiries, setEnquiries] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const getApi = useAxios();
-
-
 
 	useEffect(function () {
 		async function getEnquiries() {
@@ -45,8 +43,11 @@ export default function EnquireList() {
 					<Card title="Click to edit or delete enquire" className="admin-card__card">
 					<Card.Body className="admin-card__body" key={enquire.id}>
 						<div className="admin-card__inside">
-						<Card.Title className="admin-card__title">{enquire.title.rendered}</Card.Title>	
-						<Card.Text>{enquire.excerpt.rendered}</Card.Text>
+						<Card.Title className="admin-card__title">Name: {enquire.author_name}</Card.Title>
+						<Card.Text>Accommodationnr: {enquire.post}</Card.Text>
+    					<Card.Text className="admin-card__email">Email: {enquire.author_email}</Card.Text>
+						<Card.Text>Message: <span dangerouslySetInnerHTML={{__html: enquire.content.rendered}}/></Card.Text>
+						<Card.Text>Sent: {enquire.date}</Card.Text>
 						</div>
 					</Card.Body>
 					</Card>

@@ -4,7 +4,7 @@ import HomePage from "./components/pages/home/HomePage";
 import AccommodationsPage from "./components/pages/accommodations/AccommodationsPage";
 import SingleAccommodation from "./components/pages/accommodations/SingleAccommodation";
 import ContactPage from "./components/pages/contact/ContactPage";
-import AdminPage from "./components/pages/admin/AdminPage";
+import AdminImagePage from "./components/pages/admin/adminImage/adminImage";
 import LoginPage from "./components/pages/login/LoginPage";
 import NavBar from "./components/layout/NavBar";
 import Footer from "./components/layout/Footer";
@@ -13,7 +13,7 @@ import "./App.css";
 import PostPage from "./components/pages/admin/adminPosts/PostPage";
 import AddPost from "./components/pages/admin/adminPosts/AddPost";
 import EditPost from "./components/pages/admin/adminPosts/EditPost";
-import BookingsPage from "./components/pages/admin/adminBookings/BookingsPage";
+import AdminContactPage from "./components/pages/admin/adminContact/AdminContactPage";
 import EnquiriesPage from "./components/pages/admin/adminEnquiries/EnquiriesPage";
 import Container from "react-bootstrap/Container";
 
@@ -39,7 +39,7 @@ function App() {
 							<ContactPage />
 						</Route>
 						<Route path="/admin" exact>
-							<AdminPage />
+							<AdminImagePage />
 						</Route>
 						<Route path="/admin/posts" exact>
 							<PostPage />
@@ -53,8 +53,8 @@ function App() {
 						<Route path="/admin/enquiries" exact>
 							<EnquiriesPage />
 						</Route>
-						<Route path="/admin/bookings" exact>
-							<BookingsPage />
+						<Route path="/admin/contact" exact>
+							<AdminContactPage />
 						</Route>
 						<Route path="/login">
 							<LoginPage />

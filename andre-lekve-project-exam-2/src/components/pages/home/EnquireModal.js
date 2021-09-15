@@ -13,7 +13,7 @@ export function EnquireModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          <h1 className="enquire-container__heading-one">Enquire</h1>
+          <h1 className="enquire-container__heading-one">Accommodation enquiry</h1>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -30,7 +30,7 @@ export default function EnquireModalShow() {
   return (
     <>
       <Button className="enquire-container__button" onClick={() => setModalShow(true)}>
-        <i className="fas fa-share"></i> Quick question
+        <i class="fas fa-paper-plane"></i> Quick question
       </Button>
 
       <EnquireModal
