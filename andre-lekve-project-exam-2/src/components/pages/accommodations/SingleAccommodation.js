@@ -43,7 +43,7 @@ export default function SingleAccommodation() {
 		<>
 			<Card className="accommodations-container__card">
 					<Card.Body className="accommodations-container__body"key={post.id}>
-						<FeaturedMedia className="accommodations-container__image" key={post.id} id={post.featured_media} />
+						<img className="accommodations-container__image" key={post.id} src={post.featured_media_src_url} alt="Accommodation" />
 						<div className="accommodations-container__posts">
 						<Card.Title className="accommodations-container__posts-title">{post.title.rendered}</Card.Title>
 						<p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}/>

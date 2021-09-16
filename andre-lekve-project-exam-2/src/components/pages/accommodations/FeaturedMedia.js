@@ -23,10 +23,10 @@ export default function FeaturedMedia() {
 	return (
 		
 	<>
-			{media.map((post) => {
+			{media.map((media) => {
 				return (
 
-                    <img className="featured-media__image" key={post.post} value={post.id} src={post.source_url} alt="Bryggen in Bergen" title="Bryggen in Bergen"></img>
+                    <img className="featured-media__image" key={media.author} value={media.post} src={media.source_url} alt="Accommodation" title="Accommodation image"></img>
 				
 				);
 			})}

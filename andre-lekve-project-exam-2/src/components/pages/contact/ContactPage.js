@@ -30,7 +30,7 @@ export default function ContactForm() {
         <Heading content="Contact Us" />
              <Form className="form" onSubmit={handleSubmit(onSubmit)}>
                     <Form.Group>
-                        <Form.Control placeholder="Name..." {...register("name")} />
+                        <Form.Control placeholder="Full name..." {...register("name")} />
                         {errors.name && <ValidationError>{errors.name.message}</ValidationError>}
                     </Form.Group>
 

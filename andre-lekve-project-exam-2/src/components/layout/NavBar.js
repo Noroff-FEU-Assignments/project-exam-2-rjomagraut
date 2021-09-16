@@ -7,7 +7,6 @@ import logo from "../../images/logo.jpg";
 import Container from "react-bootstrap/Container";
 export default function NavBar() {
 	const [auth, setAuth] = useContext(AuthContext);
-
 	const history = useHistory();
 
 	function logout() {
@@ -18,7 +17,6 @@ export default function NavBar() {
 	return (
 		<>
 		<Navbar collapseOnSelect expand="lg" bg="white" variant="light">
-			
 		<Container>
 			<Navbar.Brand href="/"><img src={logo} alt="Holidaze logo"/></Navbar.Brand>
 			<Navbar.Toggle className="navbar-menu" aria-controls="responsive-navbar-nav" />
@@ -40,7 +38,6 @@ export default function NavBar() {
 					</Nav>
 			</Navbar.Collapse>
 		</Container>
-		
 		</Navbar>
 		</>
 	);

@@ -321,11 +321,6 @@ ol.carousel-indicators li.active {
   background-color: #ffffffc7;
 }
 /* -------------------------------------------------ACCOMMODATIONSPAGE------------------------------------------------------ */
-.accommodations-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 .accommodations-searchbar {
   display: flex;
   flex-direction: row;
@@ -349,13 +344,14 @@ ol.carousel-indicators li.active {
   background-color: #c026263d;
   color: #c02626;
 }
-.featured-media__image {
+.accommodations-container__image {
   width: 50%;
+  height: 50%;
 }
 .accommodations-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+
   justify-content: space-between;
   padding-top: 1rem;
 }
@@ -648,7 +644,7 @@ ol.carousel-indicators li.active {
     width: 100%;
     border-radius: 2%;
   }
-  .featured-media__image {
+  .accommodations-container__image {
     width: 100%;
     padding: 0.5rem;
   }

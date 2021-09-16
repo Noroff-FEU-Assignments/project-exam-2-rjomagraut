@@ -23,7 +23,7 @@ export default function AddPost() {
 	const history = useHistory();
 	const getApi = useAxios();
 
-	const { register, handleSubmit, formState: { errors } } = useForm({
+	const { register, handleChange, handleSubmit, formState: { errors } } = useForm({
 	resolver: yupResolver(schema),
 	});
 
@@ -32,10 +32,6 @@ export default function AddPost() {
 		setRendering(true);
 
 		data.status = "publish";
-
-		if (data.featured_media === "") {
-			data.featured_media = null;
-		}
 
 		try {
 			const response = await getApi.post("/wp/v2/posts", data);
@@ -56,6 +52,13 @@ export default function AddPost() {
 			<Form className="add-post" onSubmit={handleSubmit(onSubmit)}>
 				{serverError && <ValidationError>{serverError}</ValidationError>}
 				<fieldset disabled={rendering}>
+					<Form.Group className="position-relative mb-3">
+						<Form.Control type="file" required name="file" onChange={handleChange} isInvalid={!!errors.featured_media_src_url} {...register("featured_media_src_url")}/>
+						<Form.Control.Feedback type="invalid" tooltip>
+						{errors.featured_media_src_url && <ValidationError>{errors.featured_media_src_url.message}</ValidationError>}
+						</Form.Control.Feedback>
+         		 	</Form.Group>
+			
 					<Form.Group>
 						<Form.Control placeholder="Title" {...register("title")}  />
 						{errors.title && <ValidationError>{errors.title.message}</ValidationError>}
