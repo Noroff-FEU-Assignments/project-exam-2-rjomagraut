@@ -14,8 +14,9 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const schema = yup.object().shape({
-	title: yup.string().required("Title is required"),
-	content: yup.string().required("Conetnt is required"),
+	title: yup.string().required("Name is required"),
+	content: yup.string().required("Address is required"),
+	slug: yup.string().required("Price is required"),
 });
 
 export default function EditPost() {
@@ -92,12 +93,16 @@ export default function EditPost() {
 
 				<fieldset disabled={updatingPost}>
 					<Form.Group>
-                        <Form.Control defaultValue={post.title.rendered} placeholder="Title" {...register("title")}/>
+                        <Form.Control defaultValue={post.title.rendered} placeholder="Accommodations name" {...register("title")}/>
                         {errors.title && <ValidationError>{errors.title.message}</ValidationError>}
                     </Form.Group>
 					<Form.Group>
-                        <Form.Control as="textarea" rows={1} defaultValue={post.content.rendered} placeholder="Content" {...register("content")}/>
+                        <Form.Control defaultValue={post.content.rendered} placeholder="Address" {...register("content")}/>
                         {errors.content && <ValidationError>{errors.content.message}</ValidationError>}
+                    </Form.Group>
+					<Form.Group>
+                        <Form.Control defaultValue={post.slug.rendered} placeholder="Price" {...register("slug")}/>
+                        {errors.slug && <ValidationError>{errors.slug.message}</ValidationError>}
                     </Form.Group>
 					<Form.Group>
                         <ButtonGroup className="update-button__group" aria-label="Basic example">

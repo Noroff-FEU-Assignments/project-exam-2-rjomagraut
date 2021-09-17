@@ -1,6 +1,5 @@
 import Heading from "../../layout/Heading";
 import useAxiosNoAuth from "../../../hooks/useAxiosNoAuth";
-import FeaturedMedia from "./FeaturedMedia";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {SearchBar} from "../../../filter/SearchField";
@@ -75,8 +74,7 @@ export default function AccommodationsPage() {
 						<div className="accommodations-container__posts">
 						<Card.Title className="accommodations-container__posts-title">{post.title.rendered}</Card.Title>
 						<p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}/>
-						<p><span className="accommodations-container__posts-info">Price: </span>{post.excerpt.rendered}</p>
-						<p><span className="accommodations-container__posts-info">Rating:  </span>{post.status}</p>
+						<p><span className="accommodations-container__posts-info">Price: </span>{post.slug}</p>
 						<p><span className="accommodations-container__posts-info">Accommodationnr:  </span>{post.id}</p>
 						</div>
 					</Card.Body>

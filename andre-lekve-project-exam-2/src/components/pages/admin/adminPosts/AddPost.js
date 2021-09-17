@@ -52,12 +52,12 @@ export default function AddPost() {
 			<Form className="add-post" onSubmit={handleSubmit(onSubmit)}>
 				{serverError && <ValidationError>{serverError}</ValidationError>}
 				<fieldset disabled={rendering}>
-					<Form.Group className="position-relative mb-3">
+					{/* <Form.Group className="position-relative mb-3">
 						<Form.Control type="file" required name="file" onChange={handleChange} isInvalid={!!errors.featured_media_src_url} {...register("featured_media_src_url")}/>
 						<Form.Control.Feedback type="invalid" tooltip>
 						{errors.featured_media_src_url && <ValidationError>{errors.featured_media_src_url.message}</ValidationError>}
 						</Form.Control.Feedback>
-         		 	</Form.Group>
+         		 	</Form.Group> */}
 			
 					<Form.Group>
 						<Form.Control placeholder="Title" {...register("title")}  />
@@ -70,14 +70,14 @@ export default function AddPost() {
 					</Form.Group>
 
 					<Form.Group>
-						<Form.Control as="textarea" rows={1} placeholder="Slug" {...register("slug")}  />
+						<Form.Control as="textarea" rows={1} placeholder="Price" {...register("slug")}  />
 						{errors.slug && <ValidationError>{errors.slug.message}</ValidationError>}
 					</Form.Group>
 
-					<Form.Group>
-						<Form.Control as="textarea" rows={1} placeholder="Price" {...register("price_field")}  />
-						{errors.price_field && <ValidationError>{errors.price_field.message}</ValidationError>}
-					</Form.Group>
+					{/* <Form.Group>
+						<Form.Control as="textarea" rows={1} placeholder="Rating" {...register("template")}  />
+						{errors.template && <ValidationError>{errors.template.message}</ValidationError>}
+					</Form.Group> */}
 
 					<Form.Group>
                         {rendering ? <div className="add-post__submit">Submitting your post... <Spinner className="add-post__submit-spinner" animation="border" /></div> : <Button className="add-post__submit-button button" variant="primary" type="submit">Submit</Button>}

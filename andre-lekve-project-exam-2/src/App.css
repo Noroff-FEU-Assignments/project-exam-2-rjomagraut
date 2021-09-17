@@ -345,13 +345,12 @@ ol.carousel-indicators li.active {
   color: #c02626;
 }
 .accommodations-container__image {
-  width: 50%;
-  height: 50%;
+  width: 41%;
+  max-height: 250px;
 }
 .accommodations-container {
   display: flex;
   flex-direction: column;
-
   justify-content: space-between;
   padding-top: 1rem;
 }

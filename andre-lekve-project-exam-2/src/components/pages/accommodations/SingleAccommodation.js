@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useAxiosNoAuth from "../../../hooks/useAxiosNoAuth";
-import FeaturedMedia from "./FeaturedMedia";
 import Card from "react-bootstrap/Card";
 import Spinner from 'react-bootstrap/Spinner';
 
