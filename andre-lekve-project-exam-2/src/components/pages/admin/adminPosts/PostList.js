@@ -4,6 +4,7 @@ import useAxios from "../../../../hooks/useAxios";
 import {SearchBar} from "../../../../filter/SearchField";
 import Card from "react-bootstrap/Card";
 import Spinner from 'react-bootstrap/Spinner'
+import Button from 'react-bootstrap/Button'
 
 const filterPosts = (posts, request) => {
     if (!request) {
@@ -52,11 +53,9 @@ export default function PostList() {
 
 	return (
 <>
-		<div className="searchbar-admin">
-			<SearchBar searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
-		</div>	
-		<div className="new-post">
-			<Link eventKey="first" to="/admin/posts/add">Add a new post <i className="fas fa-plus"></i></Link>
+		<div className="adminsearch-container">
+			<SearchBar className="adminsearch-container__searchbar"searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
+			<Button className="adminsearch-container__button"><Link eventKey="first" to="/admin/accommodations/add">Add a new accommodation <i className="fas fa-plus"></i></Link></Button>
 		</div>
 		<div className="postlist-empty">
           {filteredPosts.length > 0 ? (
@@ -72,14 +71,14 @@ export default function PostList() {
 		<div className="admin-card">
 			{filteredPosts.map((post) => {
 				return (
-					<Link className="admin-card__link" to={`/admin/posts/edit/${post.id}`}>
+					<Link className="admin-card__link" to={`/admin/accommodations/edit/${post.id}`}>
 					<Card title="Click to edit or delete post" className="admin-card__card">
 					<Card.Body className="admin-card__body" key={post.id}>
 						<div className="admin-card__inside">
+							<img className="accommodations-container__image" key={post.id} src={post.featured_media_src_url} alt="Accommodation" />
 						<Card.Title className="admin-card__title">{post.title.rendered}</Card.Title>
-						<Card.Text dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
-						<Card.Text>{post.slug}</Card.Text>
-						<Card.Text>Price{post.price_field}</Card.Text>
+						
+						<Card.Text>Accommodationnr: {post.id}</Card.Text>
 						</div>
 					</Card.Body>
 					</Card>

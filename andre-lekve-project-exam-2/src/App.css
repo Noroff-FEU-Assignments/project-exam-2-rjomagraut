@@ -348,6 +348,15 @@ ol.carousel-indicators li.active {
   width: 41%;
   max-height: 250px;
 }
+.accommodation-container__image {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+.accommodation-container__heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .accommodations-container {
   display: flex;
   flex-direction: column;
@@ -381,10 +390,31 @@ ol.carousel-indicators li.active {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-family: 'ralewaythin', arial;
+  color: #ff8400;
 }
 .accommodations-container__posts-info {
   font-family: 'ralewaythin', arial;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.accommodation-container__posts {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+.accommodation-container__posts-title {
+  text-transform: uppercase;
   font-size: 1.2rem;
+  font-family: 'ralewaythin', arial;
+  color: #ff8400;
+}
+.accommodation-container__posts-info {
+  font-family: 'ralewaythin', arial;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.accommodations-container__posts-infoextra {
+  color: #193c40;
   font-weight: bold;
 }
 .loading-container {
@@ -392,6 +422,39 @@ ol.carousel-indicators li.active {
   font-size: 1rem;
   font-family: 'ralewaythin', arial;
   color: #ff8400;
+}
+.accommodation-container__posts-button {
+  background-color: #193c40;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'ralewaymedium', arial;
+  padding: 0.7rem 1.7rem;
+  cursor: pointer;
+}
+.accommodation-container__posts-button:hover {
+  background-color: #ff8400;
+}
+.back-button {
+  background-color: #193c40;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'ralewaymedium', arial;
+  padding: 0.4rem 1.3rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.back-button:hover {
+  background-color: #ff8400;
 }
 /* -------------------------------------------------CONTACTPAGE------------------------------------------------------ */
 .contact-container {
@@ -405,8 +468,11 @@ ol.carousel-indicators li.active {
   font-size: 1.4rem;
   font-family: 'ralewaythin', arial;
 }
-.login-form__login-button:hover {
+.login-form__login-button {
   background-color: #ff8400;
+}
+.login-form__login-button:hover {
+  background-color: #343a40;
 }
 .login-form__login-button:active {
   background-color: #193c40;
@@ -438,6 +504,11 @@ ol.carousel-indicators li.active {
 }
 .adminpage-imagecontainer__image {
   width: 60%;
+}
+.adminpage-searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 /* --------------------------------------------------BOOKINGPAGE----------------------------------------------- */
 .heading-bookings {
@@ -475,7 +546,6 @@ ol.carousel-indicators li.active {
   display: flex;
   flex-direction: column;
   width: 333px;
-  height: 250px;
   margin: 20px 0px 20px 0px;
   padding: 1rem;
   padding-top: 2rem;
@@ -505,6 +575,12 @@ ol.carousel-indicators li.active {
   font-family: 'ralewaythin', arial;
   text-decoration: none;
 }
+.adminsearch-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .admin-home a:hover {
   color: #ff8400;
 }
@@ -517,22 +593,26 @@ ol.carousel-indicators li.active {
   font-family: 'ralewaythin', arial;
   color: #ff8400;
 }
-.searchbar-admin {
-  padding-top: 1rem;
-  max-width: 333px;
-}
-.new-post {
-  text-transform: uppercase;
-  font-family: 'ralewaythin', arial;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-.new-post a {
-  color: #343a40;
+
+.adminsearch-container__button {
+  background-color: #ff8400;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'ralewaymedium', arial;
+  padding: 0.4rem 1.3rem;
+  cursor: pointer;
 }
-.new-post a:hover {
-  color: #ff8400;
+.adminsearch-container__button:hover {
+  background-color: #193c40;
+}
+.adminsearch-container__button a {
+  color: white;
+  text-decoration: none;
 }
 .postlist-empty {
   font-family: 'ralewaythin', arial;
@@ -552,9 +632,6 @@ ol.carousel-indicators li.active {
   font-family: 'ralewaythin', arial;
   font-weight: bold;
   color: #ff8400;
-}
-.postsmedia-dropdown__searchbar {
-  padding: 1rem 1rem 0rem 1rem;
 }
 .postsmedia-dropdown__empty {
   font-family: 'ralewaythin', arial;
@@ -647,6 +724,10 @@ ol.carousel-indicators li.active {
     width: 100%;
     padding: 0.5rem;
   }
+  .accommodation-container__heading {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   /* --------------------------------------------------ADMINPAGE----------------------------------------------- */
   .adminpage-home {
     display: flex;
@@ -663,6 +744,37 @@ ol.carousel-indicators li.active {
   }
   .adminpage-imagecontainer__image {
     width: 80%;
+  }
+  .adminsearch-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .adminsearch-container__searchbar {
+    width: 100%;
+  }
+  .adminsearch-container__button {
+    background-color: #ff8400;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: 'ralewaymedium', arial;
+    padding: 0.4rem 1.3rem;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  .admin-card__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0px 20px 0px;
+    padding: 1rem;
+    padding-top: 2rem;
+    border: solid 1px #494949;
+    border-radius: 2%;
   }
   /* -----------------------------------------------------FOOTER-------------------------------------------------- */
   .footer {

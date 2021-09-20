@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import useAxiosNoAuth from "../../../hooks/useAxiosNoAuth";
 import Card from "react-bootstrap/Card";
 import Spinner from 'react-bootstrap/Spinner';
-
+import Button from 'react-bootstrap/Button';
 
 export default function SingleAccommodation() {
 	const [post, setPost] = useState(null);
@@ -15,6 +15,7 @@ export default function SingleAccommodation() {
 	let { id } = useParams();
 
 	const singleAccommodation = `wp/v2/posts/${id}`;
+	const history = useHistory();
 
 	useEffect(
 		function () {
@@ -40,15 +41,18 @@ export default function SingleAccommodation() {
 
 	return (
 		<>
-			<Card className="accommodations-container__card">
-					<Card.Body className="accommodations-container__body"key={post.id}>
-						<img className="accommodations-container__image" key={post.id} src={post.featured_media_src_url} alt="Accommodation" />
-						<div className="accommodations-container__posts">
-						<Card.Title className="accommodations-container__posts-title">{post.title.rendered}</Card.Title>
-						<p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}/>
-						<p><span className="accommodations-container__posts-info">Price: </span>{post.tags}</p>
-						<p><span className="accommodations-container__posts-info">Rating:  </span>{post.status}</p>
+		<Button className="back-button" onClick={() => history.goBack()}><i class="fas fa-chevron-circle-left"></i> Back</Button>
+			<Card className="accommodation-container__card">
+					<Card.Body className="accommodation-container__body"key={post.id}>
+						<img className="accommodation-container__image" key={post.id} src={post.featured_media_src_url} alt="Accommodation" />
+						<div className="accommodation-container__heading">
+							<Card.Title className="accommodation-container__posts-title">{post.title.rendered}</Card.Title>
+						<p><span className="accommodation-container__posts-info">Accommodationnr:  </span>{post.id}</p>
 						</div>
+						<p dangerouslySetInnerHTML={{__html: post.content.rendered}}/>
+						<p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}/>
+						<p><span className="accommodation-container__posts-info">Price: </span>{post.slug}</p>
+						<Button className="accommodation-container__posts-button" type="submit">Book</Button>
 					</Card.Body>
 					</Card>
 </>

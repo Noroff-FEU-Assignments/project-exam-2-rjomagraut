@@ -23,7 +23,7 @@ export default function AddPost() {
 	const history = useHistory();
 	const getApi = useAxios();
 
-	const { register, handleChange, handleSubmit, formState: { errors } } = useForm({
+	const { register, handleSubmit, formState: { errors } } = useForm({
 	resolver: yupResolver(schema),
 	});
 
@@ -47,7 +47,7 @@ export default function AddPost() {
 	return (
 		<><AdminPage/>
 			<div className="admin-post__heading">
-				<Heading size="2" content="Here you can add a new post" />
+				<Heading size="2" content="Here you can add a new accommodation" />
 			</div>
 			<Form className="add-post" onSubmit={handleSubmit(onSubmit)}>
 				{serverError && <ValidationError>{serverError}</ValidationError>}
@@ -65,19 +65,19 @@ export default function AddPost() {
 					</Form.Group>
 
 					<Form.Group>
-						<Form.Control as="textarea" rows={1} placeholder="Content" {...register("content")}  />
+						<Form.Control placeholder="Address" {...register("content")}  />
 						{errors.content && <ValidationError>{errors.content.message}</ValidationError>}
 					</Form.Group>
 
 					<Form.Group>
-						<Form.Control as="textarea" rows={1} placeholder="Price" {...register("slug")}  />
-						{errors.slug && <ValidationError>{errors.slug.message}</ValidationError>}
+						<Form.Control as="textarea" rows={2} placeholder="Information" {...register("excerpt")}  />
+						{errors.excerpt && <ValidationError>{errors.excerpt.message}</ValidationError>}
 					</Form.Group>
 
-					{/* <Form.Group>
-						<Form.Control as="textarea" rows={1} placeholder="Rating" {...register("template")}  />
-						{errors.template && <ValidationError>{errors.template.message}</ValidationError>}
-					</Form.Group> */}
+					<Form.Group>
+						<Form.Control placeholder="Price" {...register("slug")}  />
+						{errors.slug && <ValidationError>{errors.slug.message}</ValidationError>}
+					</Form.Group>
 
 					<Form.Group>
                         {rendering ? <div className="add-post__submit">Submitting your post... <Spinner className="add-post__submit-spinner" animation="border" /></div> : <Button className="add-post__submit-button button" variant="primary" type="submit">Submit</Button>}

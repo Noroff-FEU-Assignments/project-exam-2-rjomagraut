@@ -60,7 +60,7 @@ export default function AccommodationsPage() {
             })
           ) : (
             <div className="accommodations-empty__warning">
-              There are no posts with that name <i className="fas fa-exclamation-circle"></i>
+              There are no accommodations with that name <i className="fas fa-exclamation-circle"></i>
             </div>
           )}
         </div>	
@@ -73,9 +73,10 @@ export default function AccommodationsPage() {
 						<img className="accommodations-container__image" key={post.id} src={post.featured_media_src_url} alt="Accommodation" />
 						<div className="accommodations-container__posts">
 						<Card.Title className="accommodations-container__posts-title">{post.title.rendered}</Card.Title>
-						<p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}/>
+						<p dangerouslySetInnerHTML={{__html: post.content.rendered}}/>
 						<p><span className="accommodations-container__posts-info">Price: </span>{post.slug}</p>
 						<p><span className="accommodations-container__posts-info">Accommodationnr:  </span>{post.id}</p>
+						<p className="accommodations-container__posts-infoextra">CLICK FOR MORE INFO</p>
 						</div>
 					</Card.Body>
 					</Card>

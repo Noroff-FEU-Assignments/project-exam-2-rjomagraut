@@ -41,13 +41,13 @@ function App() {
 						<Route path="/admin" exact>
 							<AdminImagePage />
 						</Route>
-						<Route path="/admin/posts" exact>
+						<Route path="/admin/accommodations" exact>
 							<PostPage />
 						</Route>
-						<Route path="/admin/posts/add">
+						<Route path="/admin/accommodations/add">
 							<AddPost />
 						</Route>
-						<Route path="/admin/posts/edit/:id">
+						<Route path="/admin/accommodations/edit/:id">
 							<EditPost />
 						</Route>
 						<Route path="/admin/enquiries" exact>

@@ -18,7 +18,7 @@ export default function DeletePostButton({ id }) {
 		if (verifyPostDelete) {
 			try {
 				await getApi.delete(singlePost);
-				history.push("/admin/posts");
+				history.push("/admin/accommodations");
 			} catch (error) {
 				setError(error);
 			}

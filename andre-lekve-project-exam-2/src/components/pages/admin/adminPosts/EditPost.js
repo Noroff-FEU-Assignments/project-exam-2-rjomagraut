@@ -85,23 +85,33 @@ export default function EditPost() {
 			</div>
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<div className="update-container">
-					{updated && <div className="update-container__success">The post was successfully updated<i className="far fa-check-circle update-container__success-icon"></i></div>}
+					{updated && <div className="update-container__success">The accommodation was successfully updated<i className="far fa-check-circle update-container__success-icon"></i></div>}
 				</div>
 				
 
 				{updateError && <ValidationError>{updateError}</ValidationError>}
 
 				<fieldset disabled={updatingPost}>
+					{/* <Form.Group className="position-relative mb-3">
+						<Form.Control type="file" required name="file" onChange={handleChange} isInvalid={!!errors.featured_media_src_url} {...register("featured_media_src_url")}/>
+						<Form.Control.Feedback type="invalid" tooltip>
+						{errors.featured_media_src_url && <ValidationError>{errors.featured_media_src_url.message}</ValidationError>}
+						</Form.Control.Feedback>
+         		 	</Form.Group> */}
 					<Form.Group>
                         <Form.Control defaultValue={post.title.rendered} placeholder="Accommodations name" {...register("title")}/>
                         {errors.title && <ValidationError>{errors.title.message}</ValidationError>}
                     </Form.Group>
 					<Form.Group>
-                        <Form.Control defaultValue={post.content.rendered} placeholder="Address" {...register("content")}/>
+                        <Form.Control defaultValue={post.content.rendered} placeholder="Address (e.g Elsewhere 88, 1234 Bergen)" {...register("content")}/>
                         {errors.content && <ValidationError>{errors.content.message}</ValidationError>}
                     </Form.Group>
 					<Form.Group>
-                        <Form.Control defaultValue={post.slug.rendered} placeholder="Price" {...register("slug")}/>
+                        <Form.Control defaultValue={post.excerpt.rendered} placeholder="Information" {...register("excerpt")}/>
+                        {errors.excerpt && <ValidationError>{errors.excerpt.message}</ValidationError>}
+                    </Form.Group>
+					<Form.Group>
+                        <Form.Control defaultValue={post.slug.rendered} placeholder="Price (e.g 999kr)" {...register("slug")}/>
                         {errors.slug && <ValidationError>{errors.slug.message}</ValidationError>}
                     </Form.Group>
 					<Form.Group>
