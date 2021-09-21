@@ -5,6 +5,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import ValidationError from "../../common/ValidationError";
 import Heading from "../../layout/Heading";
+import { useState } from "react";
+import useAxios from "../../../hooks/useAxios";
 
 const schema = yup.object().shape({
     name: yup.string().required("Please enter your name").min(3, "Your first name must be at least 4 characters"),
@@ -14,21 +16,37 @@ const schema = yup.object().shape({
     message: yup.string().required("Please enter your message").min(10, "The message must be at least 10 characters"),
 });
 
-export default function ContactForm() {
+export default function EnquireModal() {
+	const [rendering, setRendering] = useState(false);
+	const [serverError, setServerError] = useState(null);
+
+	const getApi = useAxios();
+
 	const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: yupResolver(schema),
-    });
+	resolver: yupResolver(schema),
+	});
+	
+	async function onSubmit(data) {
+		setServerError(null);
+		setRendering(true);
 
-    function onSubmit(data) {
-        console.log(data);
-    }
+		try {
+			const response = await getApi.post("/wp/v2/posts/147", data); 
+			console.log(response.data);
 
-    console.log(errors);
+		} catch (error) {
+			setServerError(error.toString());
+		} finally {
+			setRendering(false);
+		}
+	}
 
 	return (
         <>
         <Heading content="Contact Us" />
-             <Form className="form" onSubmit={handleSubmit(onSubmit)}>
+             <Form className="enquiry-container" onSubmit={handleSubmit(onSubmit)}>
+				{serverError && <ValidationError>{serverError}</ValidationError>}
+				<fieldset disabled={rendering}>
                     <Form.Group>
                         <Form.Control placeholder="Full name..." {...register("name")} />
                         {errors.name && <ValidationError>{errors.name.message}</ValidationError>}
@@ -58,6 +76,7 @@ export default function ContactForm() {
                     <Button className="button" variant="info" type="submit">
                         Submit
                     </Button>
+                    </fieldset>
                 </Form>
 		</>
 	);

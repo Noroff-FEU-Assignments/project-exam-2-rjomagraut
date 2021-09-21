@@ -107,6 +107,10 @@ export default function EditPost() {
                         {errors.content && <ValidationError>{errors.content.message}</ValidationError>}
                     </Form.Group>
 					<Form.Group>
+                        <Form.Control defaultValue={post.contact_form_name} placeholder="Information" {...register("name")}/>
+                        {errors.contact_form_name && <ValidationError>{errors.contact_form_name.message}</ValidationError>}
+                    </Form.Group>
+					<Form.Group>
                         <Form.Control defaultValue={post.excerpt.rendered} placeholder="Information" {...register("excerpt")}/>
                         {errors.excerpt && <ValidationError>{errors.excerpt.message}</ValidationError>}
                     </Form.Group>

@@ -5,7 +5,7 @@ import Spinner from 'react-bootstrap/Spinner'
 
 
 
-export default function ContactList() {
+export default function EnquireList() {
 
 	const [enquiries, setEnquiries] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -15,9 +15,9 @@ export default function ContactList() {
 	useEffect(function () {
 		async function getEnquiries() {
 			try {
-				const response = await getApi.get("wp/v2/comments");
+				const response = await getApi.get("wp/v2/comments/7");
 				console.log("response", response);
-				setEnquiries(response.data);
+				setEnquiries(response);
 			} catch (error) {
 				console.log(error);
 				setError(error.toString());

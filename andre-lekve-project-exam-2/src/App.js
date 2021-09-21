@@ -11,6 +11,7 @@ import Footer from "./components/layout/Footer";
 import { AuthProvider } from "./context/AuthContext";
 import "./App.css";
 import PostPage from "./components/pages/admin/adminPosts/PostPage";
+import AddImage from "./components/pages/admin/adminPosts/AddImage";
 import AddPost from "./components/pages/admin/adminPosts/AddPost";
 import EditPost from "./components/pages/admin/adminPosts/EditPost";
 import AdminContactPage from "./components/pages/admin/adminContact/AdminContactPage";
@@ -43,6 +44,9 @@ function App() {
 						</Route>
 						<Route path="/admin/accommodations" exact>
 							<PostPage />
+						</Route>
+						<Route path="/admin/accommodations/addimage">
+							<AddImage />
 						</Route>
 						<Route path="/admin/accommodations/add">
 							<AddPost />

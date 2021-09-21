@@ -49,12 +49,13 @@ export default function PostList() {
 
 	if (loading) return <div className="spinner">Loading... <Spinner className="spinner-loader" animation="border" /></div>;
 
-	if (error) return <div className="postlist-empty__warning">Couldn't find any posts <i className="fas fa-exclamation-circle"></i></div>;
+	if (error) return <div className="postlist-empty__warning">Couldn't find any accommodations <i className="fas fa-exclamation-circle"></i></div>;
 
 	return (
 <>
 		<div className="adminsearch-container">
 			<SearchBar className="adminsearch-container__searchbar"searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
+			<Button className="adminsearch-container__button"><Link eventKey="first" to="/admin/accommodations/addimage">Add a new image <i className="fas fa-plus"></i></Link></Button>
 			<Button className="adminsearch-container__button"><Link eventKey="first" to="/admin/accommodations/add">Add a new accommodation <i className="fas fa-plus"></i></Link></Button>
 		</div>
 		<div className="postlist-empty">
@@ -64,7 +65,7 @@ export default function PostList() {
             })
           ) : (
             <div className="postlist-empty__warning">
-              There are no posts with that name <i className="fas fa-exclamation-circle"></i>
+              There are no accommodations with that name <i className="fas fa-exclamation-circle"></i>
             </div>
           )}
         </div>	

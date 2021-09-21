@@ -1,25 +1,20 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import ValidationError from "../../../common/ValidationError";
 import useAxios from "../../../../hooks/useAxios";
-import Heading from "../../../layout/Heading";
 import Form from "react-bootstrap/Form";
-import AdminPage from "../AdminPage";
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 
 const schema = yup.object().shape({
-	title: yup.string().required("Title is required"),
-	content: yup.string().required("Content is required"),
 });
 
-export default function AddPost() {
+export default function AddImage() {
 	const [rendering, setRendering] = useState(false);
 	const [serverError, setServerError] = useState(null);
-
 	const history = useHistory();
 	const getApi = useAxios();
 
@@ -31,10 +26,8 @@ export default function AddPost() {
 		setServerError(null);
 		setRendering(true);
 
-		data.status = "publish";
-
 		try {
-			const response = await getApi.post("/wp/v2/posts", data);
+			const response = await getApi.post("/wp/v2/media", data);
 			console.log(response.data);
 			history.push("/admin/accommodations");
 		} catch (error) {
@@ -45,38 +38,16 @@ export default function AddPost() {
 	}
 
 	return (
-		<><AdminPage/>
-			<div className="admin-post__heading">
-				<Heading size="2" content="Here you can add a new accommodation" />
-			</div>
+		<>
 			<Form className="add-post" onSubmit={handleSubmit(onSubmit)}>
 				{serverError && <ValidationError>{serverError}</ValidationError>}
 				<fieldset disabled={rendering}>
-					<Form.Group>
-						<Form.Control placeholder="Title" {...register("title")}  />
-						{errors.title && <ValidationError>{errors.title.message}</ValidationError>}
-					</Form.Group>
-<Form.Group className="position-relative mb-3">
-						<Form.Control type="file" required name="file" isInvalid={!!errors.featured_media_src_url} {...register("featured_media_src_url")}/>
+					<Form.Group className="position-relative mb-3">
+						<Form.Control type="file" required name="file" isInvalid={!!errors.guid} {...register("guid")}/>
 						<Form.Control.Feedback type="invalid" tooltip>
-						{errors.featured_media_src_url && <ValidationError>{errors.featured_media_src_url.message}</ValidationError>}
+						{errors.guid && <ValidationError>{errors.guid.message}</ValidationError>}
 						</Form.Control.Feedback>
          		 	</Form.Group>
-					<Form.Group>
-						<Form.Control placeholder="Address" {...register("content")}  />
-						{errors.content && <ValidationError>{errors.content.message}</ValidationError>}
-					</Form.Group>
-
-					<Form.Group>
-						<Form.Control as="textarea" rows={2} placeholder="Information" {...register("excerpt")}  />
-						{errors.excerpt && <ValidationError>{errors.excerpt.message}</ValidationError>}
-					</Form.Group>
-
-					<Form.Group>
-						<Form.Control placeholder="Price" {...register("slug")}  />
-						{errors.slug && <ValidationError>{errors.slug.message}</ValidationError>}
-					</Form.Group>
-					
 					<Form.Group>
                         {rendering ? <div className="add-post__submit">Submitting your post... <Spinner className="add-post__submit-spinner" animation="border" /></div> : <Button className="add-post__submit-button button" variant="primary" type="submit">Submit</Button>}
                     </Form.Group>
