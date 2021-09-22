@@ -72,9 +72,9 @@ export default function AccommodationsPage() {
 					<Card.Body className="accommodations-container__body" key={post.id}>
 						<img className="accommodations-container__image" key={post.id} src={post.featured_media_src_url} alt="Accommodation" />
 						<div className="accommodations-container__posts">
-						<Card.Title className="accommodations-container__posts-title">{post.title.rendered}</Card.Title>
-						<p dangerouslySetInnerHTML={{__html: post.content.rendered}}/>
-						<p><span className="accommodations-container__posts-info">Price: </span>{post.slug}</p>
+						<Card.Title className="accommodations-container__posts-title">{post.hotel_name}</Card.Title>
+						<p>{post.address}</p>
+						<p><span className="accommodations-container__posts-info">Price: </span>{post.price}</p>
 						<p><span className="accommodations-container__posts-info">Accommodationnr:  </span>{post.id}</p>
 						<p className="accommodations-container__posts-infoextra">CLICK FOR MORE INFO</p>
 						</div>

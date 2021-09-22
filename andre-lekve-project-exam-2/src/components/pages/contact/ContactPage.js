@@ -9,9 +9,9 @@ import { useState } from "react";
 import useAxios from "../../../hooks/useAxios";
 
 const schema = yup.object().shape({
-    name: yup.string().required("Please enter your name").min(3, "Your first name must be at least 4 characters"),
+    full_name: yup.string().required("Please enter your name").min(3, "Your first name must be at least 4 characters"),
     address: yup.string().required("Please enter your address").min(2, "Your address must be at least 2 characters"),
-    postalCode: yup.string().required("Please enter your postal code").min(8, "Your postal code must be at least 8 characters"),
+    postal_code: yup.string().required("Please enter your postal code").min(8, "Your postal code must be at least 8 characters"),
     email: yup.string().required("Please enter an email address").email("Please enter a valid email address"),
     message: yup.string().required("Please enter your message").min(10, "The message must be at least 10 characters"),
 });
@@ -31,7 +31,7 @@ export default function EnquireModal() {
 		setRendering(true);
 
 		try {
-			const response = await getApi.post("/wp/v2/posts/147", data); 
+			const response = await getApi.post("/wp/v2/mail/149", data); 
 			console.log(response.data);
 
 		} catch (error) {
@@ -48,8 +48,8 @@ export default function EnquireModal() {
 				{serverError && <ValidationError>{serverError}</ValidationError>}
 				<fieldset disabled={rendering}>
                     <Form.Group>
-                        <Form.Control placeholder="Full name..." {...register("name")} />
-                        {errors.name && <ValidationError>{errors.name.message}</ValidationError>}
+                        <Form.Control placeholder="Full name..." {...register("full_name")} />
+                        {errors.full_name && <ValidationError>{errors.full_name.message}</ValidationError>}
                     </Form.Group>
 
                     <Form.Group>
@@ -58,8 +58,8 @@ export default function EnquireModal() {
                     </Form.Group>
 
                     <Form.Group>
-                        <Form.Control placeholder="Postal code (e.g 1234, Bergen)..." {...register("postalCode")} />
-                        {errors.postalCode && <ValidationError>{errors.postalCode.message}</ValidationError>}
+                        <Form.Control placeholder="Postal code (e.g 1234, Bergen)..." {...register("postal_code")} />
+                        {errors.postal_code && <ValidationError>{errors.postal_code.message}</ValidationError>}
                     </Form.Group>
 
                     <Form.Group>

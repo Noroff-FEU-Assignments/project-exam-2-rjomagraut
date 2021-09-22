@@ -14,9 +14,10 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const schema = yup.object().shape({
-	title: yup.string().required("Name is required"),
-	content: yup.string().required("Address is required"),
-	slug: yup.string().required("Price is required"),
+	hotel_name: yup.string().required("Hotel name is required"),
+	address: yup.string().required("Hotel address is required"),
+	hotel_info: yup.string().required("Hotel information is required"),
+	price: yup.string().required("Hotel price is required"),
 });
 
 export default function EditPost() {
@@ -81,7 +82,7 @@ export default function EditPost() {
 	return (
 		<><AdminPage/>
 			<div className="admin-post__heading">
-				<Heading size="2" content="Here you can edit your post" />
+				<Heading size="2" address="Here you can edit your post" />
 			</div>
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<div className="update-container">
@@ -92,32 +93,26 @@ export default function EditPost() {
 				{updateError && <ValidationError>{updateError}</ValidationError>}
 
 				<fieldset disabled={updatingPost}>
-					{/* <Form.Group className="position-relative mb-3">
-						<Form.Control type="file" required name="file" onChange={handleChange} isInvalid={!!errors.featured_media_src_url} {...register("featured_media_src_url")}/>
-						<Form.Control.Feedback type="invalid" tooltip>
-						{errors.featured_media_src_url && <ValidationError>{errors.featured_media_src_url.message}</ValidationError>}
-						</Form.Control.Feedback>
-         		 	</Form.Group> */}
 					<Form.Group>
-                        <Form.Control defaultValue={post.title.rendered} placeholder="Accommodations name" {...register("title")}/>
-                        {errors.title && <ValidationError>{errors.title.message}</ValidationError>}
+                        <Form.Control defaultValue={post.hotel_name} placeholder="Accommodations name" {...register("hotel_name")}/>
+                        {errors.hotel_name && <ValidationError>{errors.hotel_name.message}</ValidationError>}
                     </Form.Group>
+					
 					<Form.Group>
-                        <Form.Control defaultValue={post.content.rendered} placeholder="Address (e.g Elsewhere 88, 1234 Bergen)" {...register("content")}/>
-                        {errors.content && <ValidationError>{errors.content.message}</ValidationError>}
+                        <Form.Control defaultValue={post.address} placeholder="Address (e.g Elsewhere 88, 1234 Bergen)" {...register("address")}/>
+                        {errors.address && <ValidationError>{errors.address.message}</ValidationError>}
                     </Form.Group>
+
 					<Form.Group>
-                        <Form.Control defaultValue={post.contact_form_name} placeholder="Information" {...register("name")}/>
-                        {errors.contact_form_name && <ValidationError>{errors.contact_form_name.message}</ValidationError>}
+                        <Form.Control defaultValue={post.hotel_info} placeholder="Information" {...register("hotel_info")}/>
+                        {errors.hotel_info && <ValidationError>{errors.hotel_info.message}</ValidationError>}
                     </Form.Group>
+
 					<Form.Group>
-                        <Form.Control defaultValue={post.excerpt.rendered} placeholder="Information" {...register("excerpt")}/>
-                        {errors.excerpt && <ValidationError>{errors.excerpt.message}</ValidationError>}
+                        <Form.Control defaultValue={post.price} placeholder="Price (e.g 999kr)" {...register("price")}/>
+                        {errors.price && <ValidationError>{errors.price.message}</ValidationError>}
                     </Form.Group>
-					<Form.Group>
-                        <Form.Control defaultValue={post.slug.rendered} placeholder="Price (e.g 999kr)" {...register("slug")}/>
-                        {errors.slug && <ValidationError>{errors.slug.message}</ValidationError>}
-                    </Form.Group>
+
 					<Form.Group>
                         <ButtonGroup className="update-button__group" aria-label="Basic example">
 							<Button className="update-button__group-button" variant="info" type="submit">Update</Button>

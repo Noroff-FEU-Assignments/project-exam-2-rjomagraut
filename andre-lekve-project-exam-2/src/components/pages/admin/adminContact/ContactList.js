@@ -3,21 +3,18 @@ import useAxios from "../../../../hooks/useAxios";
 import Card from "react-bootstrap/Card";
 import Spinner from 'react-bootstrap/Spinner'
 
-
-
-export default function EnquireList() {
-
-	const [enquiries, setEnquiries] = useState([]);
+export default function ContactList() {
+	const [mails, setMail] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const getApi = useAxios();
 
 	useEffect(function () {
-		async function getEnquiries() {
+		async function getMail() {
 			try {
-				const response = await getApi.get("wp/v2/comments/7");
+				const response = await getApi.get("wp/v2/mail");
 				console.log("response", response);
-				setEnquiries(response);
+				setMail(response.data);
 			} catch (error) {
 				console.log(error);
 				setError(error.toString());
@@ -26,28 +23,29 @@ export default function EnquireList() {
 			}
 		}
 
-		getEnquiries();
+		getMail();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	if (loading) return <div className="spinner">Loading... <Spinner className="spinner-loader" animation="border" /></div>;
 
-	if (error) return <div className="enquirelist-empty__warning">There are no enquiries <i className="fas fa-exclamation-circle"></i></div>;
+	if (error) return <div className="mail-empty__warning">There are no mails <i className="fas fa-exclamation-circle"></i></div>;
 
 	return (
 <>
 		
-		<div className="admin-card">
-			{enquiries.map((enquire) => {
+		<div className="contact-card">
+			{mails.map((mail) => {
 				return (
-					<Card title="Click to edit or delete enquire" className="admin-card__card">
-					<Card.Body className="admin-card__body" key={enquire.id}>
-						<div className="admin-card__inside">
-						<Card.Title className="admin-card__title">Name: {enquire.author_name}</Card.Title>
-						<Card.Text>Accommodationnr: {enquire.post}</Card.Text>
-    					<Card.Text className="admin-card__email">Email: {enquire.author_email}</Card.Text>
-						<Card.Text>Message: <span dangerouslySetInnerHTML={{__html: enquire.content.rendered}}/></Card.Text>
-						<Card.Text>Sent: {enquire.date}</Card.Text>
+					<Card title="Click to edit or delete mail" className="contact-card__card">
+					<Card.Body className="contact-card__body" key={mail.id}>
+						<div className="contact-card__inside">
+						<Card.Text><span className="contact-card__info">Name: </span>{mail.full_name}</Card.Text>
+						<Card.Text><span className="contact-card__info">Address: </span>{mail.address}</Card.Text>
+						<Card.Text><span className="contact-card__info">Postal code: </span>{mail.postal_code}</Card.Text>
+    					<Card.Text><span className="contact-card__info">Email: </span>{mail.email}</Card.Text>
+						<Card.Text><span className="contact-card__info">Message: </span>{mail.message}</Card.Text>
+						<Card.Text className="contact-card__info-date"><span className="contact-card__info-datespan">Date received: </span>{mail.date}</Card.Text>
 						</div>
 					</Card.Body>
 					</Card>

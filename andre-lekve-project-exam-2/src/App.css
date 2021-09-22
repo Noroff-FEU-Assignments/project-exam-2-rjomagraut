@@ -348,7 +348,7 @@ ol.carousel-indicators li.active {
   width: 41%;
   max-height: 250px;
 }
-.accommodation-container__image {
+.accommodation-container__carousel-image {
   width: 100%;
   padding-bottom: 1rem;
 }
@@ -510,11 +510,42 @@ ol.carousel-indicators li.active {
   flex-direction: row;
   justify-content: space-between;
 }
-/* --------------------------------------------------BOOKINGPAGE----------------------------------------------- */
-.heading-bookings {
-  padding-top: 0.5rem;
+/* --------------------------------------------------MAILPAGE----------------------------------------------- */
+.contact-card {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.contact-card__card {
+  display: flex;
+  flex-direction: column;
+  width: 333px;
+  margin: 20px 0px 20px 0px;
+  padding: 1rem;
+  border: solid 1px #494949;
+  border-radius: 2%;
+}
+.contact-card a {
+  text-decoration: none;
+}
+.contact-card__card:hover {
+  background-color: #dadada;
+  color: #000000;
+}
+.contact-card__info {
+  font-family: 'ralewaythin', arial;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.contact-card__info-date {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.7rem;
+}
+.contact-card__info-datespan {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 /* --------------------------------------------------ENQUIRYPAGE----------------------------------------------- */
 .enquiry-container__submit {
@@ -529,6 +560,42 @@ ol.carousel-indicators li.active {
 }
 .enquiry-container__submit-button:hover {
   background-color: #193c40;
+}
+.enquiry-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.enquiry-card__card {
+  display: flex;
+  flex-direction: column;
+  width: 333px;
+  margin: 20px 0px 20px 0px;
+  padding: 1rem;
+  border: solid 1px #494949;
+  border-radius: 2%;
+}
+.enquiry-card a {
+  text-decoration: none;
+}
+.enquiry-card__card:hover {
+  background-color: #dadada;
+  color: #000000;
+}
+.enquiry-card__info {
+  font-family: 'ralewaythin', arial;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.enquiry-card__info-date {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.7rem;
+}
+.enquiry-card__info-datespan {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 /* -------------------------------------------------POSTSPAGE------------------------------------------------ */
 .admin-post__heading {

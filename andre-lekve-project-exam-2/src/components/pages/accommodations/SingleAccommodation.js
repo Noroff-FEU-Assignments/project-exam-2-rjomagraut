@@ -4,6 +4,7 @@ import useAxiosNoAuth from "../../../hooks/useAxiosNoAuth";
 import Card from "react-bootstrap/Card";
 import Spinner from 'react-bootstrap/Spinner';
 import Button from 'react-bootstrap/Button';
+import Carousel from "react-bootstrap/Carousel";
 
 export default function SingleAccommodation() {
 	const [post, setPost] = useState(null);
@@ -44,14 +45,18 @@ export default function SingleAccommodation() {
 		<Button className="back-button" onClick={() => history.goBack()}><i class="fas fa-chevron-circle-left"></i> Back</Button>
 			<Card className="accommodation-container__card">
 					<Card.Body className="accommodation-container__body"key={post.id}>
-						<img className="accommodation-container__image" key={post.id} src={post.featured_media_src_url} alt="Accommodation" />
+						<Carousel className="accommodation-container__carousel">
+						<Carousel.Item interval={5000}>
+    					<img className="accommodation-container__carousel-image" key={post.id} src={post.featured_media_src_url} alt="Accommodation" />
+						</Carousel.Item>
+						</Carousel>
 						<div className="accommodation-container__heading">
 							<Card.Title className="accommodation-container__posts-title">{post.title.rendered}</Card.Title>
 						<p><span className="accommodation-container__posts-info">Accommodationnr:  </span>{post.id}</p>
 						</div>
-						<p dangerouslySetInnerHTML={{__html: post.content.rendered}}/>
-						<p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}/>
-						<p><span className="accommodation-container__posts-info">Price: </span>{post.slug}</p>
+						<p>{post.address}</p>
+						<p>{post.hotel_info}</p>
+						<p><span className="accommodation-container__posts-info">Price: </span>{post.price}</p>
 						<Button className="accommodation-container__posts-button" type="submit">Book</Button>
 					</Card.Body>
 					</Card>

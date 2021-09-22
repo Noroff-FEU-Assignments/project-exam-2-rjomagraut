@@ -6,7 +6,6 @@ import Spinner from 'react-bootstrap/Spinner'
 
 
 export default function EnquireList() {
-
 	const [enquiries, setEnquiries] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -37,17 +36,17 @@ export default function EnquireList() {
 	return (
 <>
 		
-		<div className="admin-card">
+		<div className="enquiry-card">
 			{enquiries.map((enquire) => {
 				return (
-					<Card title="Click to edit or delete enquire" className="admin-card__card">
-					<Card.Body className="admin-card__body" key={enquire.id}>
-						<div className="admin-card__inside">
-						<Card.Title className="admin-card__title">Name: {enquire.author_name}</Card.Title>
-						<Card.Text>Accommodationnr: {enquire.post}</Card.Text>
-    					<Card.Text className="admin-card__email">Email: {enquire.author_email}</Card.Text>
-						<Card.Text>Message: <span dangerouslySetInnerHTML={{__html: enquire.content.rendered}}/></Card.Text>
-						<Card.Text>Sent: {enquire.date}</Card.Text>
+					<Card title="Click to edit or delete enquire" className="enquiry-card__card">
+					<Card.Body className="enquiry-card__body" key={enquire.id}>
+						<div className="enquiry-card__inside">
+						<Card.Text><span className="enquiry-card__info">Accommodationnr: </span>{enquire.post}</Card.Text>
+						<Card.Text><span className="enquiry-card__info">Name: </span>{enquire.author_name}</Card.Text>
+    					<Card.Text><span className="enquiry-card__info">Email: </span>{enquire.author_email}</Card.Text>
+						<Card.Text><span className="enquiry-card__info">Message: </span><p dangerouslySetInnerHTML={{__html: enquire.content.rendered}}/></Card.Text>
+						<Card.Text className="enquiry-card__info-date"><span className="enquiry-card__info-datespan">Date received: </span>{enquire.date}</Card.Text>
 						</div>
 					</Card.Body>
 					</Card>

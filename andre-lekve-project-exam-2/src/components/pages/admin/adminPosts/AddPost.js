@@ -12,8 +12,10 @@ import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 
 const schema = yup.object().shape({
-	title: yup.string().required("Title is required"),
-	content: yup.string().required("Content is required"),
+	hotel_name: yup.string().required("Hotel name is required"),
+	address: yup.string().required("Hotel address is required"),
+	hotel_info: yup.string().required("Hotel information is required"),
+	price: yup.string().required("Hotel price is required"),
 });
 
 export default function AddPost() {
@@ -53,28 +55,23 @@ export default function AddPost() {
 				{serverError && <ValidationError>{serverError}</ValidationError>}
 				<fieldset disabled={rendering}>
 					<Form.Group>
-						<Form.Control placeholder="Title" {...register("title")}  />
-						{errors.title && <ValidationError>{errors.title.message}</ValidationError>}
-					</Form.Group>
-<Form.Group className="position-relative mb-3">
-						<Form.Control type="file" required name="file" isInvalid={!!errors.featured_media_src_url} {...register("featured_media_src_url")}/>
-						<Form.Control.Feedback type="invalid" tooltip>
-						{errors.featured_media_src_url && <ValidationError>{errors.featured_media_src_url.message}</ValidationError>}
-						</Form.Control.Feedback>
-         		 	</Form.Group>
-					<Form.Group>
-						<Form.Control placeholder="Address" {...register("content")}  />
-						{errors.content && <ValidationError>{errors.content.message}</ValidationError>}
+						<Form.Control placeholder="Accommodation name" {...register("hotel_name")}  />
+						{errors.hotel_name && <ValidationError>{errors.hotel_name.message}</ValidationError>}
 					</Form.Group>
 
 					<Form.Group>
-						<Form.Control as="textarea" rows={2} placeholder="Information" {...register("excerpt")}  />
-						{errors.excerpt && <ValidationError>{errors.excerpt.message}</ValidationError>}
+						<Form.Control placeholder="Address" {...register("address")}  />
+						{errors.address && <ValidationError>{errors.address.message}</ValidationError>}
 					</Form.Group>
 
 					<Form.Group>
-						<Form.Control placeholder="Price" {...register("slug")}  />
-						{errors.slug && <ValidationError>{errors.slug.message}</ValidationError>}
+						<Form.Control as="textarea" rows={2} placeholder="Information" {...register("hotel_info")}  />
+						{errors.hotel_info && <ValidationError>{errors.hotel_info.message}</ValidationError>}
+					</Form.Group>
+
+					<Form.Group>
+						<Form.Control placeholder="Price" {...register("price")}  />
+						{errors.price && <ValidationError>{errors.price.message}</ValidationError>}
 					</Form.Group>
 					
 					<Form.Group>

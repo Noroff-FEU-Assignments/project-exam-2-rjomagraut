@@ -77,9 +77,8 @@ export default function PostList() {
 					<Card.Body className="admin-card__body" key={post.id}>
 						<div className="admin-card__inside">
 							<img className="accommodations-container__image" key={post.id} src={post.featured_media_src_url} alt="Accommodation" />
-						<Card.Title className="admin-card__title">{post.title.rendered}</Card.Title>
-						
-						<Card.Text>Accommodationnr: {post.id}</Card.Text>
+						<Card.Title className="admin-card__title">{post.hotel_name}</Card.Title>
+						<Card.Text><span className="enquiry-card__info">Accommodationnr: </span>{post.id}</Card.Text>
 						</div>
 					</Card.Body>
 					</Card>
