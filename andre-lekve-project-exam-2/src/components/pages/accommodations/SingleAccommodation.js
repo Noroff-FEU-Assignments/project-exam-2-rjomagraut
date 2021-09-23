@@ -42,8 +42,8 @@ export default function SingleAccommodation() {
 
 	return (
 		<>
-		<Button className="back-button" onClick={() => history.goBack()}><i class="fas fa-chevron-circle-left"></i> Back</Button>
-			<Card className="accommodation-container__card">
+		<Button className="back-button" onClick={() => history.goBack()}><i className="fas fa-chevron-circle-left"></i> Back</Button>
+			<Card className="accommodation-container__card" key={id}>
 					<Card.Body className="accommodation-container__body"key={post.id}>
 						<Carousel className="accommodation-container__carousel">
 						<Carousel.Item interval={5000}>

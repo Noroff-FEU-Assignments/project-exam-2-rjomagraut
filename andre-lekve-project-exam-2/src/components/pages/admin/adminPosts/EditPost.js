@@ -82,7 +82,7 @@ export default function EditPost() {
 	return (
 		<><AdminPage/>
 			<div className="admin-post__heading">
-				<Heading size="2" address="Here you can edit your post" />
+				<Heading size="3" content="Here you can update or delete an accommodation." />
 			</div>
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<div className="update-container">

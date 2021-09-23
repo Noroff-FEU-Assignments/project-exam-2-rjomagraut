@@ -55,8 +55,7 @@ export default function PostList() {
 <>
 		<div className="adminsearch-container">
 			<SearchBar className="adminsearch-container__searchbar"searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
-			<Button className="adminsearch-container__button"><Link eventKey="first" to="/admin/accommodations/addimage">Add a new image <i className="fas fa-plus"></i></Link></Button>
-			<Button className="adminsearch-container__button"><Link eventKey="first" to="/admin/accommodations/add">Add a new accommodation <i className="fas fa-plus"></i></Link></Button>
+			<Button className="adminsearch-container__button"><Link eventkey="first" to="/admin/accommodations/add">Add a new accommodation <i className="fas fa-plus"></i></Link></Button>
 		</div>
 		<div className="postlist-empty">
           {filteredPosts.length > 0 ? (
@@ -76,9 +75,9 @@ export default function PostList() {
 					<Card title="Click to edit or delete post" className="admin-card__card">
 					<Card.Body className="admin-card__body" key={post.id}>
 						<div className="admin-card__inside">
-							<img className="accommodations-container__image" key={post.id} src={post.featured_media_src_url} alt="Accommodation" />
+							<img className="admin-card__image" key={post.id} src={post.featured_media_src_url} alt="Accommodation" />
 						<Card.Title className="admin-card__title">{post.hotel_name}</Card.Title>
-						<Card.Text><span className="enquiry-card__info">Accommodationnr: </span>{post.id}</Card.Text>
+						<Card.Text><span className="admin-card__info">Accommodationnr: </span>{post.id}</Card.Text>
 						</div>
 					</Card.Body>
 					</Card>

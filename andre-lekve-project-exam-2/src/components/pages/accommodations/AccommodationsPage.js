@@ -25,6 +25,7 @@ export default function AccommodationsPage() {
     const request = new URLSearchParams(search).get('search');
     const [searchRequest, setSearchRequest] = useState(request || '');
 	const filteredPosts = filterPosts(posts, searchRequest);
+
 	const getApi = useAxiosNoAuth();
 
 	useEffect(function () {
@@ -43,9 +44,11 @@ export default function AccommodationsPage() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	console.log("filter", filteredPosts)
+
 	if (loading) return <div className="loading-container">Loading accommodations... <Spinner className="loading-container__spinner" animation="border" /></div>;
 	if (error) return <div className="loading-container__warning">Oops... Something went wrong when loading the accommodations <i className="fas fa-exclamation-circle"></i></div>;
-
+	
 	return (
 		<>
 		<div className="accommodations-searchbar">
@@ -53,20 +56,10 @@ export default function AccommodationsPage() {
 			<SearchBar searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
 		</div>
 		<Heading size="3" className="accommodations-heading" content="Take a look through our hotels, B&Bs and guesthouses and book your vacation now." />
-		<div className="accommodations-empty">
+		<div className="accommodations-container">
           {filteredPosts.length > 0 ? (
             filteredPosts.map((post) => {
-              return <div key={post.id}></div>;
-            })
-          ) : (
-            <div className="accommodations-empty__warning">
-              There are no accommodations with that name <i className="fas fa-exclamation-circle"></i>
-            </div>
-          )}
-        </div>	
-		<div className="accommodations-container">
-			{filteredPosts.map((post) => {
-				return (
+              return (
 					<Link className="accommodations-container__link" to={`/accommodations/${post.id}`}>
 					<Card className="accommodations-container__card">
 					<Card.Body className="accommodations-container__body" key={post.id}>
@@ -82,8 +75,13 @@ export default function AccommodationsPage() {
 					</Card>
 					</Link>
 				);
-			})}
-		</div>
+            })
+          ) : (
+            <div className="accommodations-empty__warning">
+              There are no accommodations with that name <i className="fas fa-exclamation-circle"></i>
+            </div>
+          )}
+        </div>	
 		</>
 	);
 }

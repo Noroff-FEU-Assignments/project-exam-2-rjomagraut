@@ -39,13 +39,13 @@ export default function EnquireList() {
 		<div className="enquiry-card">
 			{enquiries.map((enquire) => {
 				return (
-					<Card title="Click to edit or delete enquire" className="enquiry-card__card">
+					<Card className="enquiry-card__card">
 					<Card.Body className="enquiry-card__body" key={enquire.id}>
 						<div className="enquiry-card__inside">
 						<Card.Text><span className="enquiry-card__info">Accommodationnr: </span>{enquire.post}</Card.Text>
 						<Card.Text><span className="enquiry-card__info">Name: </span>{enquire.author_name}</Card.Text>
     					<Card.Text><span className="enquiry-card__info">Email: </span>{enquire.author_email}</Card.Text>
-						<Card.Text><span className="enquiry-card__info">Message: </span><p dangerouslySetInnerHTML={{__html: enquire.content.rendered}}/></Card.Text>
+						<Card.Text><span className="enquiry-card__info">Message: </span><span dangerouslySetInnerHTML={{__html: enquire.content.rendered}}/></Card.Text>
 						<Card.Text className="enquiry-card__info-date"><span className="enquiry-card__info-datespan">Date received: </span>{enquire.date}</Card.Text>
 						</div>
 					</Card.Body>

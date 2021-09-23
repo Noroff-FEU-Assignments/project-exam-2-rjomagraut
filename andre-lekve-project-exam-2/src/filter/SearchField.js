@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import Form from 'react-bootstrap/Form'
-import { Typeahead } from 'react-bootstrap-typeahead';
-
+import FormControl from 'react-bootstrap/FormControl'
+import InputGroup from 'react-bootstrap/InputGroup'
 
 export const SearchBar = ({ searchRequest, setSearchRequest }) => {
     const history = useHistory();
@@ -9,10 +9,21 @@ export const SearchBar = ({ searchRequest, setSearchRequest }) => {
         history.push(`?search=${searchRequest}`);
         search.preventDefault();
     };
+    if (searchRequest.length>0){
 
+    }
     return (
-        <Form className="accommodations-searchbar" action="/" method="get" autoComplete="off" onSubmit={onSubmit}>
-                <Typeahead value={searchRequest}  onInput={(search) => setSearchRequest(search.target.value)} type="text" placeholder="Accommodations..." name="search"/>
+        <Form action="/" method="get" autoComplete="off" onSubmit={onSubmit}>
+             <InputGroup className="mb-3">
+                 <InputGroup.Prepend>
+            <InputGroup.Text id="basic-addon1"><i className="searchbar-icon fas fa-search"></i></InputGroup.Text>
+            </InputGroup.Prepend>
+                <FormControl value={searchRequest}  onChange={(search) => setSearchRequest(search.target.value)} type="text" placeholder="Search for posts..." name="search"/>
+             </InputGroup>
         </Form>
     );
 };
+
+// {posts && posts.map((post,i)=>
+//                 <div key={i}>{post.hotel_name}</div>
+//                 )}

@@ -37,7 +37,7 @@ export default function ContactList() {
 		<div className="contact-card">
 			{mails.map((mail) => {
 				return (
-					<Card title="Click to edit or delete mail" className="contact-card__card">
+					<Card className="contact-card__card">
 					<Card.Body className="contact-card__body" key={mail.id}>
 						<div className="contact-card__inside">
 						<Card.Text><span className="contact-card__info">Name: </span>{mail.full_name}</Card.Text>

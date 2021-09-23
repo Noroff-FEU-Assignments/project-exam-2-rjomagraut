@@ -7,6 +7,7 @@ import ValidationError from "../../common/ValidationError";
 import Heading from "../../layout/Heading";
 import { useState } from "react";
 import useAxios from "../../../hooks/useAxios";
+import Spinner from 'react-bootstrap/Spinner';
 
 const schema = yup.object().shape({
     full_name: yup.string().required("Please enter your name").min(3, "Your first name must be at least 4 characters"),
@@ -19,7 +20,7 @@ const schema = yup.object().shape({
 export default function EnquireModal() {
 	const [rendering, setRendering] = useState(false);
 	const [serverError, setServerError] = useState(null);
-
+    const [sent, setSent] = useState(false);
 	const getApi = useAxios();
 
 	const { register, handleSubmit, formState: { errors } } = useForm({
@@ -29,11 +30,12 @@ export default function EnquireModal() {
 	async function onSubmit(data) {
 		setServerError(null);
 		setRendering(true);
-
+        setSent(false);
+        
 		try {
 			const response = await getApi.post("/wp/v2/mail/149", data); 
 			console.log(response.data);
-
+            setSent(true);
 		} catch (error) {
 			setServerError(error.toString());
 		} finally {
@@ -73,9 +75,11 @@ export default function EnquireModal() {
                         {errors.message && <ValidationError>{errors.message.message}</ValidationError>}
                     </Form.Group>
 
-                    <Button className="button" variant="info" type="submit">
-                        Submit
-                    </Button>
+                    <Form.Group>
+                        <div className="enquiry-container__button-container">
+                        {rendering ? <div className="enquiry-container__submit">Sending your contact form... <Spinner className="enquiry-container__submit-spinner" animation="border" /></div> : <Button className="enquiry-container__submit-button  button" variant="primary" type="submit">Send</Button>}<div>{sent && <div className="enquiry-container__submit-complete">Your contact form was sent <i className="far fa-check-circle enquiry-container__submit-spinner"></i></div>}</div>
+						</div>
+                    </Form.Group>
                     </fieldset>
                 </Form>
 		</>

@@ -550,9 +550,8 @@ ol.carousel-indicators li.active {
 /* --------------------------------------------------ENQUIRYPAGE----------------------------------------------- */
 .enquiry-container__submit {
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: 'ralewaythin', arial;
-  font-weight: bold;
   color: #ff8400;
 }
 .enquiry-container__submit-button {
@@ -560,6 +559,22 @@ ol.carousel-indicators li.active {
 }
 .enquiry-container__submit-button:hover {
   background-color: #193c40;
+}
+.enquiry-container__button-container {
+  display: flex;
+  flex-direction: row;
+}
+.enquiry-container__submit-spinner {
+  color: #ff8400;
+  font-size: 1rem;
+}
+.enquiry-container__submit-complete {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-family: 'ralewaythin', arial;
+  color: #193c40;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
 }
 .enquiry-card {
   display: flex;
@@ -614,22 +629,30 @@ ol.carousel-indicators li.active {
   flex-direction: column;
   width: 333px;
   margin: 20px 0px 20px 0px;
-  padding: 1rem;
-  padding-top: 2rem;
+  padding: 0.5rem;
   border: solid 1px #494949;
   border-radius: 2%;
 }
 .admin-card a {
   text-decoration: none;
 }
+.admin-card__image {
+  width: 100%;
+  padding-bottom: 1rem;
+}
 .admin-card__card:hover {
   background-color: #dadada;
   color: #000000;
 }
 .admin-card__title {
-  font-weight: bold;
-  font-family: 'ralewaythin', arial;
+  font-family: 'ralewaymedium', arial;
   text-transform: uppercase;
+  font-size: 1rem;
+}
+.admin-card__info {
+  font-family: 'ralewaymedium', arial;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 .admin-home {
   display: flex;
@@ -804,6 +827,10 @@ ol.carousel-indicators li.active {
     display: flex;
     justify-content: center;
   }
+  .admin-card a {
+    text-decoration: none;
+    text-align: center;
+  }
   .adminpage-imagecontainer {
     display: flex;
     justify-content: center;
@@ -833,13 +860,17 @@ ol.carousel-indicators li.active {
     margin-top: 1rem;
     cursor: pointer;
   }
+  .admin-card__info {
+    font-family: 'ralewaymedium', arial;
+    font-weight: bold;
+    font-size: 1rem;
+  }
   .admin-card__card {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 20px 0px 20px 0px;
-    padding: 1rem;
-    padding-top: 2rem;
+    padding: 0.5rem;
     border: solid 1px #494949;
     border-radius: 2%;
   }

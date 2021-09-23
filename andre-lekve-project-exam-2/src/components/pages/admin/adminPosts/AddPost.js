@@ -49,7 +49,7 @@ export default function AddPost() {
 	return (
 		<><AdminPage/>
 			<div className="admin-post__heading">
-				<Heading size="2" content="Here you can add a new accommodation" />
+				<Heading size="3" content="Here you can add a new accommodation." />
 			</div>
 			<Form className="add-post" onSubmit={handleSubmit(onSubmit)}>
 				{serverError && <ValidationError>{serverError}</ValidationError>}
