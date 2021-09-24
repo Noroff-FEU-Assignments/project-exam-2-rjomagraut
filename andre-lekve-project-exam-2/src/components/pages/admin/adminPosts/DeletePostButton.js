@@ -13,7 +13,7 @@ export default function DeletePostButton({ id }) {
 	const singlePost = `/wp/v2/posts/${id}`;
 
 	async function postDelete() {
-		const verifyPostDelete = window.confirm("Are you sure you want to go to the dark side and delete this post?");
+		const verifyPostDelete = window.confirm("Are you sure you want to delete this accommodation?");
 
 		if (verifyPostDelete) {
 			try {

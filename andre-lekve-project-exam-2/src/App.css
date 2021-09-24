@@ -759,16 +759,16 @@ ol.carousel-indicators li.active {
 .delete-button {
   padding: 0.7rem 1.3rem;
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .update-button__group-button {
   padding: 0.7rem 1.3rem;
-  background-color: #ff8400;
+  background-color: #193c40;
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .update-button__group-button:hover {
-  background-color: #ff8400;
+  background-color: #193c40c5;
 }
 
 @media only screen and (max-width: 500px) {

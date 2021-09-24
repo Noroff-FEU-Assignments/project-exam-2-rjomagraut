@@ -57,20 +57,10 @@ export default function PostList() {
 			<SearchBar className="adminsearch-container__searchbar"searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
 			<Button className="adminsearch-container__button"><Link eventkey="first" to="/admin/accommodations/add">Add a new accommodation <i className="fas fa-plus"></i></Link></Button>
 		</div>
-		<div className="postlist-empty">
+		<div className="admin-card">
           {filteredPosts.length > 0 ? (
             filteredPosts.map((post) => {
-              return <div key={post.id}></div>;
-            })
-          ) : (
-            <div className="postlist-empty__warning">
-              There are no accommodations with that name <i className="fas fa-exclamation-circle"></i>
-            </div>
-          )}
-        </div>	
-		<div className="admin-card">
-			{filteredPosts.map((post) => {
-				return (
+              return (
 					<Link className="admin-card__link" to={`/admin/accommodations/edit/${post.id}`}>
 					<Card title="Click to edit or delete post" className="admin-card__card">
 					<Card.Body className="admin-card__body" key={post.id}>
@@ -82,9 +72,14 @@ export default function PostList() {
 					</Card.Body>
 					</Card>
 					</Link>
-				);
-			})}
-		</div>
+			  );	
+			})
+          ) : (
+            <div className="postlist-empty__warning">
+              There are no accommodations with that name <i className="fas fa-exclamation-circle"></i>
+            </div>
+          )}
+        </div>	
 		</>
 	);
 }
