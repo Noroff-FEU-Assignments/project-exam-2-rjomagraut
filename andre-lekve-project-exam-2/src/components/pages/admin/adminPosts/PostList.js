@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import useAxios from "../../../../hooks/useAxios";
-import AutoComplete from "../../../../filter/AutoComplete";
 import Card from "react-bootstrap/Card";
 import Spinner from 'react-bootstrap/Spinner'
 import Button from 'react-bootstrap/Button'
+import AutoCompleteAdmin from "../../../../filter/AutoCompleteAdmin";
 
 export default function PostList() {
 
@@ -41,7 +41,7 @@ export default function PostList() {
 	return (
 <>
 		<div className="adminsearch-container">
-			<AutoComplete />
+			<AutoCompleteAdmin />
 			<Button className="adminsearch-container__button"><Link eventkey="first" to="/admin/accommodations/add">Add a new accommodation <i className="fas fa-plus"></i></Link></Button>
 		</div>
 		<div className="admin-card">

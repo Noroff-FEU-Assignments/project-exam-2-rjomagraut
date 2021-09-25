@@ -128,7 +128,13 @@ button {
 .searchbar-placeholder::placeholder {
   color: #ff8400;
 }
-
+.admin-warning {
+  font-size: 1.1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #c026263d;
+  color: #c02626;
+}
 /* ---------------------------------------------------NAVBAR------------------------------------------------------ */
 .navbar {
   display: flex;
@@ -534,6 +540,43 @@ ol.carousel-indicators li.active {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+/* --------------------------------------------------BOOKINGSPAGE----------------------------------------------- */
+.booking-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.booking-card__card {
+  display: flex;
+  flex-direction: column;
+  width: 333px;
+  margin: 20px 0px 20px 0px;
+  padding: 1rem;
+  border: solid 1px #494949;
+  border-radius: 2%;
+}
+.booking-card a {
+  text-decoration: none;
+}
+.booking-card__card:hover {
+  background-color: #dadada;
+  color: #000000;
+}
+.booking-card__info {
+  font-family: 'ralewaythin', arial;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.booking-card__info-date {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.7rem;
+}
+.booking-card__info-datespan {
+  font-family: 'ralewaythin', arial;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 /* --------------------------------------------------MAILPAGE----------------------------------------------- */
 .contact-card {

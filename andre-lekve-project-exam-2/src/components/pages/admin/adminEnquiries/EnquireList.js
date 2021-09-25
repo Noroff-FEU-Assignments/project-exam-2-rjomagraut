@@ -3,8 +3,6 @@ import useAxios from "../../../../hooks/useAxios";
 import Card from "react-bootstrap/Card";
 import Spinner from 'react-bootstrap/Spinner'
 
-
-
 export default function EnquireList() {
 	const [enquiries, setEnquiries] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -31,7 +29,7 @@ export default function EnquireList() {
 
 	if (loading) return <div className="spinner">Loading... <Spinner className="spinner-loader" animation="border" /></div>;
 
-	if (error) return <div className="enquirelist-empty__warning">There are no enquiries <i className="fas fa-exclamation-circle"></i></div>;
+	if (error) return <div className="enquirelist-empty__warning admin-warning">There are no enquiries <i className="fas fa-exclamation-circle"></i></div>;
 
 	return (
 <>
