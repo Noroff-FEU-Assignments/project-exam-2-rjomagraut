@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import Spinner from 'react-bootstrap/Spinner';
 import Button from 'react-bootstrap/Button';
 import Carousel from "react-bootstrap/Carousel";
+import EnquireModalShow from "./EnquireModal";
 
 export default function SingleAccommodation() {
 	const [post, setPost] = useState(null);
@@ -41,8 +42,10 @@ export default function SingleAccommodation() {
 	if (fetchError) return <div className="loading-container__warning">Oops... Something went wrong when loading the accommodation <i className="fas fa-exclamation-circle"></i></div>;
 
 	return (
-		<>
+		<><div className="button-container">
 		<Button className="back-button" onClick={() => history.goBack()}><i className="fas fa-chevron-circle-left"></i> Back</Button>
+		<EnquireModalShow />
+		</div>
 			<Card className="accommodation-container__card" key={id}>
 					<Card.Body className="accommodation-container__body"key={post.id}>
 						<Carousel className="accommodation-container__carousel">

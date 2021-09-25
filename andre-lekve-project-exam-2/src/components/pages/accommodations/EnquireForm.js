@@ -30,6 +30,11 @@ export default function EnquireModal() {
 		setRendering(true);
 		setSent(false);
 
+
+		if (data.author_email === null) {
+			data.author_email = "";
+		}
+
 		try {
 			const response = await getApi.post("/wp/v2/comments", data); 
 			console.log(response.data);

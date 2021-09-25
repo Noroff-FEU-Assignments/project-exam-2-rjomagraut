@@ -291,6 +291,7 @@ main {
   text-transform: uppercase;
   border: none;
   font-size: 0.8rem;
+  padding: 0.4rem 1.3rem;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
@@ -432,6 +433,8 @@ ol.carousel-indicators li.active {
 .accommodations-container__posts-infoextra {
   color: #193c40;
   font-weight: bold;
+  position: absolute;
+  bottom: 0;
 }
 .loading-container {
   text-transform: uppercase;
@@ -471,6 +474,12 @@ ol.carousel-indicators li.active {
 }
 .back-button:hover {
   background-color: #ff8400;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 }
 /* -------------------------------------------------CONTACTPAGE------------------------------------------------------ */
 .contact-container {
@@ -833,6 +842,14 @@ ol.carousel-indicators li.active {
   .accommodation-container__heading {
     display: flex;
     flex-direction: column-reverse;
+  }
+  .accommodations-container__posts-infoextra {
+    display: none;
+  }
+  .accommodations-searchbar {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
   }
   /* --------------------------------------------------ADMINPAGE----------------------------------------------- */
   .adminpage-home {
