@@ -1,30 +1,17 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import useAxios from "../../../../hooks/useAxios";
-import {SearchBar} from "../../../../filter/SearchField";
+import AutoComplete from "../../../../filter/AutoComplete";
 import Card from "react-bootstrap/Card";
 import Spinner from 'react-bootstrap/Spinner'
 import Button from 'react-bootstrap/Button'
 
-const filterPosts = (posts, request) => {
-    if (!request) {
-        return posts;
-    }
-
-    return posts.filter((post) => {
-        const postName = post.title.rendered.toLowerCase();
-        return postName.includes(request);
-    });
-};
-
 export default function PostList() {
-	const { search } = window.location;
+
 	const [posts, setPosts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
-    const request = new URLSearchParams(search).get('search');
-    const [searchRequest, setSearchRequest] = useState(request || '');
-	const filteredPosts = filterPosts(posts, searchRequest);
+
 	const getApi = useAxios();
 
 
@@ -54,12 +41,12 @@ export default function PostList() {
 	return (
 <>
 		<div className="adminsearch-container">
-			<SearchBar className="adminsearch-container__searchbar"searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
+			<AutoComplete />
 			<Button className="adminsearch-container__button"><Link eventkey="first" to="/admin/accommodations/add">Add a new accommodation <i className="fas fa-plus"></i></Link></Button>
 		</div>
 		<div className="admin-card">
-          {filteredPosts.length > 0 ? (
-            filteredPosts.map((post) => {
+          {posts.length > 0 ? (
+            posts.map((post) => {
               return (
 					<Link className="admin-card__link" to={`/admin/accommodations/edit/${post.id}`}>
 					<Card title="Click to edit or delete post" className="admin-card__card">

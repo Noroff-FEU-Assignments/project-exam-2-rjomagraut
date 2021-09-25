@@ -64,9 +64,7 @@ a {
 .input-group-text {
   background-color: #343a40;
 }
-.searchbar-icon {
-  color: #ffffff;
-}
+
 .button {
   background-color: #343a40;
   border: none;
@@ -113,6 +111,24 @@ a {
   text-align: center;
   font-size: 11px;
 }
+.autocomplete-dropdown__menu {
+  background-color: #ffffff;
+  width: 100%;
+}
+#dropdown-basic,
+button {
+  background-color: #fff7f0;
+  border-color: #fff7f0;
+  margin: 0px;
+  padding: 0px;
+}
+.searchbar-placeholder {
+  background-color: #ffffff;
+}
+.searchbar-placeholder::placeholder {
+  color: #ff8400;
+}
+
 /* ---------------------------------------------------NAVBAR------------------------------------------------------ */
 .navbar {
   display: flex;

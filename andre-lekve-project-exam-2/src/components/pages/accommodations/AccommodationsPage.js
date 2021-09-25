@@ -2,31 +2,16 @@ import Heading from "../../layout/Heading";
 import useAxiosNoAuth from "../../../hooks/useAxiosNoAuth";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import {SearchBar} from "../../../filter/SearchField";
 import Card from "react-bootstrap/Card";
 import Spinner from 'react-bootstrap/Spinner';
-
-const filterPosts = (posts, request) => {
-    if (!request) {
-        return posts;
-    }
-
-    return posts.filter((post) => {
-        const postTitle = post.title.rendered.toLowerCase();
-        return postTitle.includes(request);
-    });
-};
+import AutoComplete from "../../../filter/AutoComplete";
 
 export default function AccommodationsPage() {
-	const { search } = window.location;
 	const [posts, setPosts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
-    const request = new URLSearchParams(search).get('search');
-    const [searchRequest, setSearchRequest] = useState(request || '');
-	const filteredPosts = filterPosts(posts, searchRequest);
-
 	const getApi = useAxiosNoAuth();
+
 
 	useEffect(function () {
 		async function getPosts() {
@@ -44,8 +29,6 @@ export default function AccommodationsPage() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	console.log("filter", filteredPosts)
-
 	if (loading) return <div className="loading-container">Loading accommodations... <Spinner className="loading-container__spinner" animation="border" /></div>;
 	if (error) return <div className="loading-container__warning">Oops... Something went wrong when loading the accommodations <i className="fas fa-exclamation-circle"></i></div>;
 	
@@ -53,12 +36,12 @@ export default function AccommodationsPage() {
 		<>
 		<div className="accommodations-searchbar">
 			<Heading size="1" className="accommodations-heading" content="Accommodations" />
-			<SearchBar searchRequest={searchRequest} setSearchRequest={setSearchRequest}/>
+			<AutoComplete />
 		</div>
 		<Heading size="3" className="accommodations-heading" content="Take a look through our hotels, B&Bs and guesthouses and book your vacation now." />
 		<div className="accommodations-container">
-          {filteredPosts.length > 0 ? (
-            filteredPosts.map((post) => {
+          {posts.length > 0 ? (
+            posts.map((post) => {
               return (
 					<Link className="accommodations-container__link" to={`/accommodations/${post.id}`}>
 					<Card className="accommodations-container__card">
