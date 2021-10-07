@@ -21,7 +21,6 @@ const schema = yup.object().shape({
 export default function AddPost() {
 	const [rendering, setRendering] = useState(false);
 	const [serverError, setServerError] = useState(null);
-
 	const history = useHistory();
 	const getApi = useAxios();
 
